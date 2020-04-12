@@ -10,7 +10,7 @@ export default function(Vue, { head }) {
   head.link.push({
     rel: 'stylesheet',
     href: encodeURI(
-      'https://fonts.googleapis.com/css?family=Muli:400,400i,700|Corben:700&display=swap',
+      'https://fonts.googleapis.com/css?family=Muli:400,400i,700|Roboto:700&display=swap',
     ),
   })
 }
