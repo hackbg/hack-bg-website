@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="lang">
+  <head>
+    <title data-vue-tag="true">How to run your own Aeternity node on Amazon AWS - hack</title><meta data-vue-tag="true" charset="utf-8"><meta data-vue-tag="true" name="generator" content="Gridsome v0.6.9"><meta data-vue-tag="true" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="true" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="true" data-key="description" name="description" content="Blockchain &amp; DLT Solutions"><link data-vue-tag="true" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.9d75ece.png"><link data-vue-tag="true" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.9d75ece.png"><link data-vue-tag="true" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.9d75ece.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.9d75ece.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.9d75ece.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.9d75ece.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.9d75ece.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.9d75ece.png"><link data-vue-tag="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,700%7CRoboto:700&amp;display=swap"><noscript data-vue-tag="true" ><style>.g-image--loading{display:none;}</style></noscript><link rel="preload" href="/assets/css/1.styles.62bc704f.css" as="style"><link rel="preload" href="/assets/js/app.65886749.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--word-press-post-vue.6b96b889.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.c0056c42.js"><link rel="prefetch" href="/assets/js/page--src--pages--about-vue.cc0ddc96.js"><link rel="prefetch" href="/assets/js/page--src--pages--blog-vue.31e5c933.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.209c66e6.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-author-vue.f3682281.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-category-vue.6c1d1f0a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-tag-vue.ca30f2b9.js"><link rel="prefetch" href="/assets/js/page--src--templates--wordpress-page-vue.f6d3f943.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--blog-vue~page--src--templates--word-press-author-vue~page--src--templates-~38dfac69.e03723d9.js"><link rel="stylesheet" href="/assets/css/1.styles.62bc704f.css">
+  </head>
+  <body data-vue-tag="">
+    <div id="app" data-server-rendered="true"><div class="container"><header class="py-4 py-sm-5"><nav class="navbar p-0 navbar-light navbar-expand-lg"><div class="navbar-brand"><a href="/" target="_self" class="navbar-brand font-family-headings router-link-active"><span class="h3 text-dark">hack</span></a></div><button type="button" aria-label="Toggle navigation" aria-controls="nav-collapse" aria-expanded="false" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button><div id="nav-collapse" class="navbar-collapse collapse" style="display:none;"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" target="_self" class="nav-link router-link-active">Home</a></li><li class="nav-item"><a href="/about" target="_self" class="nav-link">About</a></li><li class="nav-item"><a href="/blog" target="_self" class="nav-link active">Blog</a></li></ul></div></nav></header><!----><main><div class="row align-items-start"><main class="bg-white p-0 rounded shadow-lg col-lg-12 col-12"><div class="overflow-hidden p-4 p-sm-5 "><article class="row"><div data-first="H" class="meta-data py-md-5 text-center position-relative d-flex col-md-3"><div class="mx-auto mb-2 position-relative"><span class="post-date font-weight-bold">26 Mar 2019</span><i class="d-none d-md-block">in:</i><ul class="list-inline mb-0"><li class="list-inline-item m-0"><a href="/category/tutorials" class="text-uppercase font-weight-bold mx-1">Tutorials</a><span>·</span></li><li class="list-inline-item m-0"><a href="/category/blockchain-tech-talks" class="text-uppercase font-weight-bold mx-1">Tech Talks</a><!----></li></ul><div><i>by: </i><a href="/author/milen" class="font-weight-bold">
+          Milen Radkov
+        </a></div></div></div><div class="mb-5 py-md-5 col"><header class="mb-4"><h1 class="text-break">How to run your own Aeternity node on Amazon AWS</h1><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53.png" alt="aeternity-node-amazon-aws" width="920" class="mt-4 img-fluid"></header><div class="post-content text-break">
+<p>Hey there,</p>
+
+
+
+<p>So you are new to <g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3"><g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3"><a href="http://aeternity.com">aeternity</a></g></g> blockchain and want to run a node of your own, but you don&#8217;t have powerful enough hardware or you don&#8217;t want to bully your laptop.</p>
+
+
+
+<p>After thinking a while you decide to run it on an Amazon AWS VPS instance, but you are not sure how to set everything up &#8211; well you&#8217;ve come to the right place.</p>
+
+
+
+<p>After registering, setting up your account and logging in for the first time you are presented with this AWS Management Console screen. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00-1024x640.png" alt="" class="wp-image-758" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.00.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Scroll down a bit and select &#8220;<strong>Launch a virtual machine</strong>&#8220;.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19-1024x640.png" alt="" class="wp-image-759" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.19.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Then in the search bar type &#8220;ubuntu&#8221; and hit enter.</p>
+
+
+
+<p>Aeternity has a node release for ubuntu so Ubuntu 18.04 will be best suitable for the purpose of launching our own node without much headaches.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59-1024x640.png" alt="" class="wp-image-760" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.24.59.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>After the search loads, we select Ubuntu Server 18.04 (the first one).</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24-1024x640.png" alt="" class="wp-image-761" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.24.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>As you may know, Amazon gives you 12 months of free tier usage for some of its services and as it happens t2.micro tier <g class="gr_ gr_4 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="4" data-gr-id="4">vps</g> type is eligible for this.</p>
+
+
+
+<p><strong>BUT</strong></p>
+
+
+
+<p>It is worth mentioning that if we choose the free tier we won&#8217;t have enough CPU time (<g class="gr_ gr_5 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="5" data-gr-id="5">amazon</g> has limited the <g class="gr_ gr_7 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="7" data-gr-id="7">cpu</g> time that the free tier can use) to sync with the whole <g class="gr_ gr_112 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="112" data-gr-id="112">aeternity</g> blockchain.</p>
+
+
+
+<p>So we now have a few options here:</p>
+
+
+
+<ul><li>proceed with the free t2.micro tier, sync the blockchain on our local pc and then upload it to the AWS instance </li><li>proceed with the free t2.micro tier, set everything up and then upgrade the tier when we hit the CPU time limit</li><li>or the easiest one &#8211; just select t3.nano or above we are good to go (it won&#8217;t cost <g class="gr_ gr_5 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del" id="5" data-gr-id="5">us</g> much, as it charges only on usage).</li></ul>
+
+
+
+<p>For the purpose of this tutorial I will be proceeding with the second option as it will give you a better overview of the whole procedure than the rest.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36-1024x640.png" alt="" class="wp-image-762" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.25.36.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>After selecting the tier type we click &#8220;Review and Launch&#8221; button to continue.<br></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16-1024x640.png" alt="" class="wp-image-764" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.16.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Then we click the &#8220;Launch&#8221; button. We are being asked to choose a keypair that will be used for SSH-ing into the instance or create a new one.</p>
+
+
+
+<p>Select &#8220;Create a new key pair&#8221; and then name it as you like. I named mine <code>aeternity</code>, so if you&#8217;ve selected another name, adjust the next commands accordingly. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40-1024x640.png" alt="" class="wp-image-765" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.40.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption><br></figcaption></figure></div>
+
+
+
+<p>Download the key pair and click &#8220;Launch instance&#8221;.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58-1024x640.png" alt="" class="wp-image-766" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.26.58.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Our new vps instance is now launching.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15-1024x640.png" alt="" class="wp-image-767" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.15.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18-1024x640.png" alt="" class="wp-image-768" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.18.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38-1024x640.png" alt="" class="wp-image-769" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.38.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>While waiting for our AWS EC2 instance to fire, we can visit the <a href="http://github.com/aeternity/aeternity">Aeternity blockchain Github repo</a> and search for the latest <g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">aeternity</g> node <a href="http://github.com/aeternity/aeternity/releases/latest">release</a>.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50-1024x640.png" alt="" class="wp-image-770" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.27.50.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Our AWS instance is already up and running. Now we need to connect to it via SSH and start setting up our aeternity node.</p>
+
+
+
+<p>Select the instance and click &#8220;Connect&#8221;.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53-1024x640.png" alt="" class="wp-image-771" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.28.53.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>We are now provided with instructions on how to connect to our vps via SSH. If you are using Windows machine &#8211; you can use PuTTY or another SSH client that you are used to.</p>
+
+
+
+<p>I&#8217;m running on OSx, so I will proceed with the tutorial via Mac&#8217;s terminal. It should be the same so don&#8217;t worry.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03-1024x640.png" alt="" class="wp-image-772" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03-1024x640.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03-300x188.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03-768x480.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03-922x576.png 922w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.03.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Amazon asks us to change the<code>chmod</code>level of the file so the first thing we do is:</p>
+
+
+
+<p><code>chmod 400 aeternity.pem</code></p>
+
+
+
+<p>Note that the key pair file I&#8217;ve downloaded to my home folder so if you&#8217;ve downloaded your somewhere else &#8211; adjust this accordingly to your path.</p>
+
+
+
+<p>The next command also should be adjusted according to your <code>.pem</code> file location and the public DNS that Amazon provided for your instance.</p>
+
+
+
+<p>You should be able to see the exact commands on the screen above.</p>
+
+
+
+<p><code>ssh -i "aeternity.pem" ubuntu@ec2-54-159-117.255.compute-1.amazonaws.com</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.38.png" alt="" class="wp-image-773" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.38.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.38-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.38-768x485.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.29.38-912x576.png 912w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.11.png" alt="" class="wp-image-774" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.11.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.11-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.11-768x485.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.11-912x576.png 912w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>Now we are into our fresh launched Amazon AWS instance.</p>
+
+
+
+<p>In order for us to run aeternity node on Ubuntu 18.04 we need to install a few libraries beforehand.</p>
+
+
+
+<p><code>sudo apt-get install libsodium23</code></p>
+
+
+
+<p><code>sudo apt-get install libssl1.0.0</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.51.png" alt="" class="wp-image-775" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.51.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.51-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.51-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.31.51-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>Then we download the latest node release from the aeternity&#8217;s github that we checked in the beginning.</p>
+
+
+
+<p><code>wget https://github.com/aeternity/aeternity/releases/download/v5.5.0/aeternity-5.5.0-ubuntu-x86_64.tar.gz</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.41.44.png" alt="" class="wp-image-776" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.41.44.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.41.44-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.41.44-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.41.44-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>We need to create a directory where our aeternity node will be placed:</p>
+
+
+
+<p><code>mkdir aeternity</code></p>
+
+
+
+<p>and then extract the release archive in it:</p>
+
+
+
+<p> <code>tar -xvzf aeternity-5.5.0-ubuntu-x86_64.tar.gz -C aeternity</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.35.png" alt="" class="wp-image-780" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.35.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.35-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.35-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.35-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.54.png" alt="" class="wp-image-781" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.54.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.54-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.54-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.54-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>Enter the directory via <code>cd aeternity</code>.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.58.png" alt="" class="wp-image-782" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.58.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.58-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.58-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.43.58-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>We now can start our aeternity node via:</p>
+
+
+
+<p><code>bin/aeternity start</code></p>
+
+
+
+<p>As you can see we can get a warning related to the maximum number of open files, so we execute <code>ulimit -n 24576</code> and then start again.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.03.png" alt="" class="wp-image-784" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.03.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.03-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.03-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.03-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>For stopping the node we execute <code>bin/aeternity stop</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.13.png" alt="" class="wp-image-785" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.13.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.13-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.13-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.13-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>If we want to see if our node is up and running we can make a simple <code>curl</code> request:</p>
+
+
+
+<p><code>curl http://127.0.0.1:3013/v2/blocks/top</code></p>
+
+
+
+<p>If you get some JSON like this &#8211; it means we are good to go.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53.png" alt="" class="wp-image-786" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53.png 920w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53-300x195.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53-768x499.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.46.53-886x576.png 886w" sizes="(max-width: 920px) 100vw, 920px" /></figure></div>
+
+
+
+<p>As you can notice the Aeternity node is working on TCP port <code>3013</code> so we need to allow that in our instance&#8217;s network settings.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01-1024x645.png" alt="" class="wp-image-787" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.01.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>We select the instance then click &#8220;Actions&#8221; and navigate to &#8220;Networking&#8221; -&gt; &#8220;Change Security Groups&#8221;.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33-1024x645.png" alt="" class="wp-image-788" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.50.33.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>We create <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar only-ins replaceWithoutSep" id="4" data-gr-id="4">new</g> security group called &#8220;<g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">aeternity</g>&#8221; and add new Custom TCP rule in the Inbound traffic tab for the <g class="gr_ gr_57 gr-alert gr_gramm gr_inline_cards gr_run_anim Style multiReplace" id="57" data-gr-id="57">port </g><code>3013</code><g class="gr_ gr_57 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Style multiReplace" id="57" data-gr-id="57">.</g></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07-1024x645.png" alt="" class="wp-image-789" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.07.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19-1024x645.png" alt="" class="wp-image-790" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.51.19.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11-1024x645.png" alt="" class="wp-image-792" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.11.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>Then we add this to our instance.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30-1024x645.png" alt="" class="wp-image-791" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.30.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>We can check if it&#8217;s working by accessing it in our browser at the following address:<br><br><code>our_instance_public_dns_that_amazon_provided_for_us:3013/v2/status</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38-1024x645.png" alt="" class="wp-image-793" srcset="https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38-1024x645.png 1024w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38-300x189.png 300w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38-768x484.png 768w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38-914x576.png 914w, https://hack.bg/wp-content/uploads/2019/03/Screenshot-2019-03-14-at-16.52.38.png 1386w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<p>You now have a running Aeternity node on AWS. Cheers ! 🙂</p>
+</div><h2 class="font-family-sans-serif h4">Tags:</h2><ul class="list-inline"><li class="list-inline-item"><a href="/tag/aeternity" target="_self" class="btn mb-2 btn-primary btn-sm">
+                    Aeternity (13)
+                  </a></li><li class="list-inline-item"><a href="/tag/amazon-aws" target="_self" class="btn mb-2 btn-primary btn-sm">
+                    Amazon AWS (1)
+                  </a></li><li class="list-inline-item"><a href="/tag/blockchain" target="_self" class="btn mb-2 btn-primary btn-sm">
+                    Blockchain (42)
+                  </a></li></ul></div></article></div></main></div></main><!----></div><footer class="bg-white text-center py-5 mt-5">
+  Open source - <a href="https://hack.bg/">hack</a></footer></div>
+    <script src="/assets/js/app.65886749.js" defer></script><script src="/assets/js/page--src--templates--word-press-post-vue.6b96b889.js" defer></script>
+  </body>
+</html>
