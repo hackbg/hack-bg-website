@@ -7,20 +7,20 @@ const TYPE_AUTHOR = 'author'
 const TYPE_ATTACHEMENT = 'attachment'
 
 class WordPressSource {
-  static defaultOptions () {
+  static defaultOptions() {
     return {
       baseUrl: '',
       apiBase: 'wp-json',
       perPage: 100,
       concurrent: 10,
       routes: {},
-      typeName: 'WordPress'
+      typeName: 'WordPress',
     }
   }
 
-  constructor (api, options) {
+  constructor(api, options) {
     this.options = options
-    this.restBases = { posts: {}, taxonomies: {}}
+    this.restBases = { posts: {}, taxonomies: {} }
     this.staticPages = []
 
     if (!options.typeName) {
@@ -34,7 +34,7 @@ class WordPressSource {
     const baseUrl = trimEnd(options.baseUrl, '/')
 
     this.client = axios.create({
-      baseURL: `${baseUrl}/${options.apiBase}`
+      baseURL: `${baseUrl}/${options.apiBase}`,
     })
 
     this.routes = {
@@ -42,7 +42,7 @@ class WordPressSource {
       post_tag: '/tag/:slug',
       category: '/category/:slug',
       author: '/author/:slug',
-      ...this.options.routes
+      ...this.options.routes,
     }
 
     api.loadSource(async store => {
@@ -56,31 +56,29 @@ class WordPressSource {
       await this.getPosts(store)
       this.createPages(api)
     })
-
   }
 
   createPages(api) {
     api.createPages(({ createPage }) => {
-
-      const pagesToCreate = this.staticPages.filter((item) => {
+      const pagesToCreate = this.staticPages.filter(item => {
         const index = this.options.createPages.list.indexOf(item)
         return this.options.createPages.approach === 'exclude' ? index === -1 : index !== -1
       })
 
-      pagesToCreate.forEach((page) => {
+      pagesToCreate.forEach(page => {
         console.log('Created page', page)
         createPage({
           path: `/${page}`,
           component: './src/templates/staticPage.vue',
           context: {
-            path: `/pages/${page}`
-          }
+            path: `/pages/${page}`,
+          },
         })
       })
     })
   }
 
-  async getPostTypes (store) {
+  async getPostTypes(store) {
     const { data } = await this.fetch('wp/v2/types', {}, {})
 
     for (const type in data) {
@@ -88,17 +86,17 @@ class WordPressSource {
       this.restBases.posts[type] = options.rest_base
       store.addContentType({
         typeName: this.createTypeName(type),
-        route: this.routes[type] || `/${options.rest_base}/:slug`
+        route: this.routes[type] || `/${options.rest_base}/:slug`,
       })
     }
   }
 
-  async getUsers (store) {
+  async getUsers(store) {
     const { data } = await this.fetch('wp/v2/users')
 
     const authors = store.addContentType({
       typeName: this.createTypeName(TYPE_AUTHOR),
-      route: this.routes.author
+      route: this.routes.author,
     })
 
     for (const author of data) {
@@ -109,19 +107,19 @@ class WordPressSource {
         ...fields,
         id: author.id,
         title: author.name,
-        avatars
+        avatars,
       })
     }
   }
 
-  async getTaxonomies (store) {
+  async getTaxonomies(store) {
     const { data } = await this.fetch('wp/v2/taxonomies', {}, {})
 
     for (const type in data) {
       const options = data[type]
       const taxonomy = store.addContentType({
         typeName: this.createTypeName(type),
-        route: this.routes[type] || `/${options.rest_base}/:slug`
+        route: this.routes[type] || `/${options.rest_base}/:slug`,
       })
 
       this.restBases.taxonomies[type] = options.rest_base
@@ -134,20 +132,19 @@ class WordPressSource {
           title: term.name,
           slug: term.slug,
           content: term.description,
-          count: term.count
+          count: term.count,
         })
       }
     }
   }
 
-  async getPosts (store) {
+  async getPosts(store) {
     const { getContentType, createReference } = store
 
     const AUTHOR_TYPE_NAME = this.createTypeName(TYPE_AUTHOR)
     const ATTACHEMENT_TYPE_NAME = this.createTypeName(TYPE_ATTACHEMENT)
 
     for (const type in this.restBases.posts) {
-
       const restBase = this.restBases.posts[type]
       const typeName = this.createTypeName(type)
       const posts = getContentType(typeName)
@@ -185,7 +182,7 @@ class WordPressSource {
     }
   }
 
-  async fetch (url, params = {}, fallbackData = []) {
+  async fetch(url, params = {}, fallbackData = []) {
     let res
 
     try {
@@ -209,7 +206,7 @@ class WordPressSource {
     return res
   }
 
-  async fetchPaged (path) {
+  async fetchPaged(path) {
     const { perPage, concurrent } = this.options
 
     return new Promise(async (resolve, reject) => {
@@ -240,20 +237,24 @@ class WordPressSource {
         queue.push({ per_page: perPage, page })
       }
 
-      await pMap(queue, async params => {
-        try {
-          const { data } = await this.fetch(path, params)
-          res.data.push(...ensureArrayData(path, data))
-        } catch (err) {
-          console.log(err.message)
-        }
-      }, { concurrency: concurrent })
+      await pMap(
+        queue,
+        async params => {
+          try {
+            const { data } = await this.fetch(path, params)
+            res.data.push(...ensureArrayData(path, data))
+          } catch (err) {
+            console.log(err.message)
+          }
+        },
+        { concurrency: concurrent },
+      )
 
       resolve(res.data)
     })
   }
 
-  normalizeFields (fields) {
+  normalizeFields(fields) {
     const res = {}
 
     for (const key in fields) {
@@ -264,7 +265,7 @@ class WordPressSource {
     return res
   }
 
-  normalizeFieldValue (value) {
+  normalizeFieldValue(value) {
     if (value === null) return null
     if (value === undefined) return null
 
@@ -293,20 +294,20 @@ class WordPressSource {
     return value
   }
 
-  createTypeName (name = '') {
+  createTypeName(name = '') {
     return camelCase(`${this.options.typeName} ${name}`, { pascalCase: true })
   }
 }
 
-function ensureArrayData (url, data) {
+function ensureArrayData(url, data) {
   if (!Array.isArray(data)) {
     try {
       data = JSON.parse(data)
     } catch (err) {
       throw new Error(
         `Failed to fetch ${url}\n` +
-        `Expected JSON response but received:\n` +
-        `${data.trim().substring(0, 150)}...\n`
+          `Expected JSON response but received:\n` +
+          `${data.trim().substring(0, 150)}...\n`,
       )
     }
   }

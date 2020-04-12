@@ -5,24 +5,24 @@
 </template>
 
 <script>
-import FormatedDate from "~/components/FormatedDate.vue"
+import FormatedDate from '~/components/FormatedDate.vue'
 
 export default {
   components: {
-    FormatedDate
+    FormatedDate,
   },
   props: {
     post: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     readingTime() {
-      const wordsCountApprox = this.post.content.split(' ').filter((e) => e.length > 2).length
-      const timeInMins = Math.round(wordsCountApprox/200)
+      const wordsCountApprox = this.post.content.split(' ').filter(e => e.length > 2).length
+      const timeInMins = Math.round(wordsCountApprox / 200)
       return ` &asymp;${Math.max(1, timeInMins)}min`
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <Pager :info="info" linkClass="page-link rounded" class="pagination justify-content-center"/>
+  <Pager :info="info" linkClass="page-link rounded" class="pagination justify-content-center" />
 </template>
 
 <script>
@@ -9,11 +9,11 @@ export default {
   props: {
     info: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    Pager
-  }
+    Pager,
+  },
 }
 </script>

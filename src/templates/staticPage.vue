@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <h1 class="mb-5">{{$page.page.title}}</h1>
-    <div class="page-content" v-html="$page.page.content"/>
+    <h1 class="mb-5">{{ $page.page.title }}</h1>
+    <div class="page-content" v-html="$page.page.content" />
   </Layout>
 </template>
 
@@ -15,13 +15,13 @@ query($path: String) {
 </page-query>
 
 <script>
-import Post from "~/components/Post.vue"
+import Post from '~/components/Post.vue'
 
 export default {
-  metaInfo () {
+  metaInfo() {
     return {
-      title: this.$page.page.title
+      title: this.$page.page.title,
     }
-  }
+  },
 }
 </script>

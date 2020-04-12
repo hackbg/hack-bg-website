@@ -136,13 +136,6 @@ export default [
     }
   },
   {
-    path: "/author/:slug/:page(\\d+)?",
-    component: () => import(/* webpackChunkName: "page--src--templates--word-press-author-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressAuthor.vue"),
-    meta: {
-      data: true
-    }
-  },
-  {
     path: "/category/:slug/:page(\\d+)?",
     component: () => import(/* webpackChunkName: "page--src--templates--word-press-category-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressCategory.vue"),
     meta: {
@@ -150,8 +143,8 @@ export default [
     }
   },
   {
-    path: "/:slug",
-    component: () => import(/* webpackChunkName: "page--src--templates--word-press-post-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressPost.vue"),
+    path: "/author/:slug/:page(\\d+)?",
+    component: () => import(/* webpackChunkName: "page--src--templates--word-press-author-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressAuthor.vue"),
     meta: {
       data: true
     }
@@ -159,6 +152,13 @@ export default [
   {
     path: "/tag/:slug/:page(\\d+)?",
     component: () => import(/* webpackChunkName: "page--src--templates--word-press-post-tag-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressPostTag.vue"),
+    meta: {
+      data: true
+    }
+  },
+  {
+    path: "/blog/:slug",
+    component: () => import(/* webpackChunkName: "page--src--templates--word-press-post-vue" */ "/Users/milenradkov/projects/hack/my-gridsome-wp-site/src/templates/WordPressPost.vue"),
     meta: {
       data: true
     }

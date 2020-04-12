@@ -1,12 +1,28 @@
 <template>
   <Layout>
     <header class="mb-4">
-      <b-img v-if="$page.author.avatars.avatar96" :src="$page.author.avatars.avatar96" width="64" rounded="circle" fluid thumbnail center class="mb-3 shadow" alt=""/>
-      <h1 class="text-center text-uppercase h5 font-family-sans-serif">Author: {{ $page.author.name }} </h1>
-      <div class="my-3 p-4 bg-light description" v-if="$page.author.description" v-html="$page.author.description"/>
+      <b-img
+        v-if="$page.author.avatars.avatar96"
+        :src="$page.author.avatars.avatar96"
+        width="64"
+        rounded="circle"
+        fluid
+        thumbnail
+        center
+        class="mb-3 shadow"
+        alt=""
+      />
+      <h1 class="text-center text-uppercase h5 font-family-sans-serif">
+        Author: {{ $page.author.name }}
+      </h1>
+      <div
+        class="my-3 p-4 bg-light description"
+        v-if="$page.author.description"
+        v-html="$page.author.description"
+      />
     </header>
-    <Post :post="node" v-for="{ node } in $page.author.belongsTo.edges" :key="node.id"/>
-    <Pagination :info="$page.author.belongsTo.pageInfo"/>
+    <Post :post="node" v-for="{ node } in $page.author.belongsTo.edges" :key="node.id" />
+    <Pagination :info="$page.author.belongsTo.pageInfo" />
   </Layout>
 </template>
 
@@ -62,13 +78,13 @@ import Pagination from '~/components/Pagination.vue'
 export default {
   components: {
     Post,
-    Pagination
+    Pagination,
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: this.$page.author.name
+      title: this.$page.author.name,
     }
-  }
+  },
 }
 </script>
 

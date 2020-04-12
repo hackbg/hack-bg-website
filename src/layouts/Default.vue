@@ -21,14 +21,14 @@
         <transition name="fade" appear>
           <b-col tag="main" cols="12" lg="9" class="bg-white p-0 rounded shadow-lg">
             <div class="overflow-hidden p-4 p-sm-5 ">
-              <slot/>
+              <slot />
             </div>
           </b-col>
         </transition>
-        <site-sidebar/>
+        <site-sidebar />
       </b-row>
     </b-container>
-    <site-footer/>
+    <site-footer />
   </div>
 </template>
 
@@ -38,14 +38,14 @@ import SiteFooter from '~/components/SiteFooter.vue'
 export default {
   components: {
     SiteSidebar,
-    SiteFooter
-  }
+    SiteFooter,
+  },
 }
 </script>
 
 <style>
 .fade-enter-active {
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .fade-enter {

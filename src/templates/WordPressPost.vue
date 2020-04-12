@@ -2,7 +2,7 @@
   <Layout>
     <Post :post="$page.post">
       <header class="mb-4">
-        <h1 class="text-break" v-html="$page.post.title"/>
+        <h1 class="text-break" v-html="$page.post.title" />
         <b-img
           v-if="$page.post.featuredMedia"
           :src="$page.post.featuredMedia.sourceUrl"
@@ -12,23 +12,18 @@
           class="mt-4"
         />
       </header>
-      <div class="post-content text-break" v-html="$page.post.content"/>
+      <div class="post-content text-break" v-html="$page.post.content" />
       <template v-if="$page.post.tags.length">
         <h2 class="font-family-sans-serif h4">Tags:</h2>
         <ul class="list-inline">
-          <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id" >
-            <b-button
-              class="mb-2"
-              variant="primary"
-              size="sm"
-              :to="tag.path"
-            >
+          <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id">
+            <b-button class="mb-2" variant="primary" size="sm" :to="tag.path">
               {{ tag.title }} ({{ tag.count }})
             </b-button>
           </li>
         </ul>
       </template>
-   </Post>
+    </Post>
   </Layout>
 </template>
 
@@ -65,16 +60,16 @@ query Post($path: String!) {
 </page-query>
 
 <script>
-import Post from "~/components/Post.vue"
+import Post from '~/components/Post.vue'
 
 export default {
   components: {
-    Post
+    Post,
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: this.$page.post.title
+      title: this.$page.post.title,
     }
-  }
+  },
 }
 </script>

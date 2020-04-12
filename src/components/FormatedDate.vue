@@ -1,20 +1,22 @@
 <template>
-  <span>{{formatedDate}}</span>
+  <span>{{ formatedDate }}</span>
 </template>
 
 <script>
-import moment from "moment"
+import moment from 'moment'
 export default {
   props: {
     date: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     formatedDate() {
-      return moment(this.date).locale('en_gb').format('ll')
-    }
-  }
+      return moment(this.date)
+        .locale('en_gb')
+        .format('ll')
+    },
+  },
 }
 </script>

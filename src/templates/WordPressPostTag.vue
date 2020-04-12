@@ -1,8 +1,10 @@
 <template>
   <Layout>
-    <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">Tag: {{ $page.tag.title }} </h1>
-    <Post :post="node" v-for="{ node } in $page.tag.belongsTo.edges" :key="node.id"/>
-    <Pagination :info="$page.tag.belongsTo.pageInfo"/>
+    <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">
+      Tag: {{ $page.tag.title }}
+    </h1>
+    <Post :post="node" v-for="{ node } in $page.tag.belongsTo.edges" :key="node.id" />
+    <Pagination :info="$page.tag.belongsTo.pageInfo" />
   </Layout>
 </template>
 
@@ -48,12 +50,12 @@ import Pagination from '~/components/Pagination.vue'
 export default {
   components: {
     Post,
-    Pagination
+    Pagination,
   },
-  metaInfo () {
+  metaInfo() {
     return {
-      title: this.$page.tag.title
+      title: this.$page.tag.title,
     }
-  }
+  },
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">Latest Stories</h1>
-    <Post :post="node" v-for="{ node } in $page.allWordPressPost.edges" :key="node.id"/>
-    <Pagination :info="$page.allWordPressPost.pageInfo"/>
+    <Post :post="node" v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" />
+    <Pagination :info="$page.allWordPressPost.pageInfo" />
   </Layout>
 </template>
 
@@ -43,10 +43,10 @@ import Pagination from '~/components/Pagination.vue'
 export default {
   components: {
     Post,
-    Pagination
+    Pagination,
   },
   metaInfo: {
-    title: 'Latest Stories'
-  }
+    title: 'Latest Stories',
+  },
 }
 </script>
