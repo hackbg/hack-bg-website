@@ -69,7 +69,7 @@ class WordPressSource {
         console.log('Created page', page)
         createPage({
           path: `/${page}`,
-          component: './src/templates/staticPage.vue',
+          component: './src/templates/WordpressPage.vue',
           context: {
             path: `/pages/${page}`,
           },

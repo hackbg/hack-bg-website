@@ -5,7 +5,7 @@
         <b-navbar class="p-0" toggleable="lg" type="light">
           <b-navbar-brand>
             <b-navbar-brand class="font-family-headings" to="/">
-              <span class="h3 text-dark">Gridsome</span>
+              <span class="h3 text-dark">hack</span>
             </b-navbar-brand>
           </b-navbar-brand>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
