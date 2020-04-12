@@ -1,29 +1,37 @@
 <template>
   <Layout>
-    <Post :post="$page.post">
-      <header class="mb-4">
-        <h1 class="text-break" v-html="$page.post.title" />
-        <b-img
-          v-if="$page.post.featuredMedia"
-          :src="$page.post.featuredMedia.sourceUrl"
-          :width="$page.post.featuredMedia.mediaDetails.width"
-          :alt="$page.post.featuredMedia.altText"
-          fluid
-          class="mt-4"
-        />
-      </header>
-      <div class="post-content text-break" v-html="$page.post.content" />
-      <template v-if="$page.post.tags.length">
-        <h2 class="font-family-sans-serif h4">Tags:</h2>
-        <ul class="list-inline">
-          <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id">
-            <b-button class="mb-2" variant="primary" size="sm" :to="tag.path">
-              {{ tag.title }} ({{ tag.count }})
-            </b-button>
-          </li>
-        </ul>
-      </template>
-    </Post>
+    <b-row class="align-items-start">
+      <transition name="fade" appear>
+        <b-col tag="main" cols="12" lg="12" class="bg-white p-0 rounded shadow-lg">
+          <div class="overflow-hidden p-4 p-sm-5 ">
+            <Post :post="$page.post">
+              <header class="mb-4">
+                <h1 class="text-break" v-html="$page.post.title" />
+                <b-img
+                  v-if="$page.post.featuredMedia"
+                  :src="$page.post.featuredMedia.sourceUrl"
+                  :width="$page.post.featuredMedia.mediaDetails.width"
+                  :alt="$page.post.featuredMedia.altText"
+                  fluid
+                  class="mt-4"
+                />
+              </header>
+              <div class="post-content text-break" v-html="$page.post.content" />
+              <template v-if="$page.post.tags.length">
+                <h2 class="font-family-sans-serif h4">Tags:</h2>
+                <ul class="list-inline">
+                  <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id">
+                    <b-button class="mb-2" variant="primary" size="sm" :to="tag.path">
+                      {{ tag.title }} ({{ tag.count }})
+                    </b-button>
+                  </li>
+                </ul>
+              </template>
+            </Post>
+          </div>
+        </b-col>
+      </transition>
+    </b-row>
   </Layout>
 </template>
 

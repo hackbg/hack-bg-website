@@ -1,10 +1,18 @@
 <template>
   <Layout>
-    <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">
-      Category: {{ $page.category.title }}
-    </h1>
-    <Post :post="node" v-for="{ node } in $page.category.belongsTo.edges" :key="node.id" />
-    <Pagination :info="$page.category.belongsTo.pageInfo" />
+    <b-row class="align-items-start">
+      <transition name="fade" appear>
+        <b-col tag="main" cols="12" lg="12" class="bg-white p-0 rounded shadow-lg">
+          <div class="overflow-hidden p-4 p-sm-5 ">
+            <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">
+              Category: {{ $page.category.title }}
+            </h1>
+            <Post :post="node" v-for="{ node } in $page.category.belongsTo.edges" :key="node.id" />
+            <Pagination :info="$page.category.belongsTo.pageInfo" />
+          </div>
+        </b-col>
+      </transition>
+    </b-row>
   </Layout>
 </template>
 
