@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="lang">
+  <head>
+    <title data-vue-tag="true">Blockchain Developers Meetup Bulgaria- #0x04  - Introduction to Solidity Assembly - hack</title><meta data-vue-tag="true" charset="utf-8"><meta data-vue-tag="true" name="generator" content="Gridsome v0.6.9"><meta data-vue-tag="true" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="true" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="true" data-key="description" name="description" content="Blockchain &amp; DLT Solutions"><link data-vue-tag="true" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.02dc19a.png"><link data-vue-tag="true" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.02dc19a.png"><link data-vue-tag="true" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.02dc19a.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.02dc19a.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.02dc19a.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.02dc19a.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.02dc19a.png"><link data-vue-tag="true" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.02dc19a.png"><link data-vue-tag="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,400i,700%7CRoboto:700&amp;display=swap"><noscript data-vue-tag="true" ><style>.g-image--loading{display:none;}</style></noscript><link rel="preload" href="/assets/css/1.styles.31a3ec90.css" as="style"><link rel="preload" href="/assets/js/app.661f73b5.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--word-press-post-vue.0bba2f14.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.7bf30378.js"><link rel="prefetch" href="/assets/js/page--src--pages--about-vue.84da8a54.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.d667893c.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-author-vue.1f013519.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-category-vue.212b853a.js"><link rel="prefetch" href="/assets/js/page--src--templates--word-press-post-tag-vue.f2e8b4ce.js"><link rel="prefetch" href="/assets/js/page--src--templates--wordpress-page-vue.8877a81e.js"><link rel="prefetch" href="/assets/js/vendors~page--src--pages--index-vue~page--src--templates--word-press-author-vue~page--src--templates~38b1111c.5b8eae6e.js"><link rel="stylesheet" href="/assets/css/1.styles.31a3ec90.css">
+  </head>
+  <body data-vue-tag="">
+    <div data-server-rendered="true" id="app"><div class="container"><header class="py-4 py-sm-5"><nav class="navbar p-0 navbar-light navbar-expand-lg"><div class="navbar-brand"><a href="/" target="_self" class="navbar-brand font-family-headings router-link-active"><span class="h3 text-dark">hack</span></a></div><button type="button" aria-label="Toggle navigation" aria-controls="nav-collapse" aria-expanded="false" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button><div id="nav-collapse" class="navbar-collapse collapse" style="display:none;"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" target="_self" class="nav-link router-link-active">Home</a></li><li class="nav-item"><a href="/about" target="_self" class="nav-link">About</a></li></ul></div></nav></header><div class="row align-items-start"><main class="bg-white p-0 rounded shadow-lg col-lg-9 col-12"><div class="overflow-hidden p-4 p-sm-5 "><article class="row"><div data-first="B" class="meta-data py-md-5 text-center position-relative d-flex col-md-3"><div class="mx-auto mb-2 position-relative"><span class="post-date font-weight-bold">9 Nov 2018</span><i class="d-none d-md-block">in:</i><ul class="list-inline mb-0"><li class="list-inline-item m-0"><a href="/category/events" class="text-uppercase font-weight-bold mx-1">Events</a><span>·</span></li><li class="list-inline-item m-0"><a href="/category/meetups" class="text-uppercase font-weight-bold mx-1">Meet-ups</a><!----></li></ul><div><i>by: </i><a href="/author/hgeorgiev" class="font-weight-bold">
+          Hristo Georgiev
+        </a></div></div></div><div class="mb-5 py-md-5 col"><header class="mb-4"><h1 class="text-break">Blockchain Developers Meetup Bulgaria- #0x04  - Introduction to Solidity Assembly</h1><img src="https://hack.bg/wp-content/uploads/2019/01/2b818-1YBU7COOCqWsP6CSpe2E5Wg.jpeg" alt="blockchain-developers-bulgaria" width="800" class="mt-4 img-fluid"></header><div class="post-content text-break">
+<p>Four months had passed since the kick off of our awesome blockchain developers meetup. So far we’ve had very good speakers and topics. Moreover, we are happy to see new faces in the rows and to see our community growing.</p>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/2b818-1YBU7COOCqWsP6CSpe2E5Wg.jpeg" alt=""/><figcaption>Blockchain Developers Meetup Bulgaria — 04</figcaption></figure></div>
+
+
+
+<p>This time we had a small technical issue, the youtube live stream crashed a few times and we were unable to fix it on time, so we couldn’t record the whole session and we would like to apologize for that to the people watching us online. In this post, we will share with you the essence of yesterday’s meet-up.</p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>The event went as follows.</p>
+
+
+
+<h4>In the first&nbsp;part</h4>
+
+
+
+<p>We covered crypto related news covering Forks, Security, and technology advancements, without going into many technical details. In the second part we have our fantastic speaker <a href="https://pmihaylov.com/" data-href="https://pmihaylov.com/" target="_blank" rel="noopener noreferrer"><strong>Preslav Mihaylov</strong></a>, head of blockchain training at <a href="https://softuni.bg" data-href="https://softuni.bg" target="_blank" rel="noopener noreferrer">Software University</a> (SoftUni Sofia), introduce the public to <strong>Solidity Assembly</strong>.</p>
+
+
+
+<p>Let’s look more into the details&nbsp;…</p>
+
+
+
+<p>Our CEO <a href="https://medium.com/u/23eaffb29922" data-href="https://medium.com/u/23eaffb29922" data-anchor-type="2" data-user-id="23eaffb29922" data-action-value="23eaffb29922" data-action="show-user-card" data-action-type="hover" target="_blank" rel="noopener noreferrer">Milen Radkov</a> went to meet with some cool guys at <a href="https://websummit.com" data-href="https://websummit.com" target="_blank" rel="noopener noreferrer"><strong>Web Summit</strong></a> in Lisbon, so this time our Business Development Manager Hristo led the party — it was about time someone else to do so.</p>
+
+
+
+<p>We spoke about the recently released <strong>Cardano Rust Project,</strong> which is basically an API allowing third-party developers to dive into <a href="https://www.cardano.org/en/home/" data-href="https://www.cardano.org/en/home/" target="_blank" rel="noopener noreferrer">Cardano</a>. It is worth mentioning that the project is a toolkit compatible for iOS, Web, and Android.</p>
+
+
+
+<p>Secondly, we discussed the rise of the <strong>Bitcoin</strong> <strong>sidechains</strong> with the release of <a href="https://blockstream.com/liquid/" data-href="https://blockstream.com/liquid/" target="_blank" rel="noopener noreferrer">Blockstream’s Liquid Network</a>. An alternative to the <strong>Lightning network </strong>but with focus on exchanges and the big financial institutions(worth having a look at).</p>
+
+
+
+<p>We did not miss to mention the unsuccessful release of Constantinople Hard Fork that did not manage to sync after launch with the Testnet. Few reasons were mentioned by <a href="https://twitter.com/5chdn" data-href="https://twitter.com/5chdn" target="_blank" rel="noopener noreferrer">Afri Schoedon</a>, Parity dev and the takeaway is that the fork will be delayed until sometime in 2019.</p>
+
+
+
+<p>Next, we looked at a rather worrisome report saying that over 54% of the 100 top daily volume exchanges have security issues. And the most common issues are related to:</p>
+
+
+
+<ul><li>Console errors</li><li>User Account Security</li><li>Registar and Domain Security</li><li>Web Protocol Security</li></ul>
+
+
+
+<p>Next topic was the exiting release of Sapling, Zcash hard fork allowing shielded transfers to be completed with 100 times less memory (around 40mb) and probably six or more times faster. With this upgrade Zcash confidential transactions are getting mobile friendly because one does not need to run a full node anymore to run them. Zcash are bringing to us their awesome technology that will lead to us to the era of “privacy-by-default”.</p>
+
+
+
+<p>Just before the end of the news review, we mentioned the first Truckload Shipment Using Bitcoin Smart Contracts with Rootstock (RSK). During the shipment, the Funds for the transaction were held in escrow by the smart contract on the integrated RSK platform and were automatically released to the carrier upon delivery.</p>
+
+
+
+<p>And lastly, we discussed a recent EOS report pointing out the EOS has misled the public on the number of transaction that it can handle. The study was funded by the Bounties Network which is led by Brent Xu of ConsenSys and for this purpose replicated the EOS network to analyze its performance during two months of testing. The conclusions it reached are fairly damning. They say, for example:</p>
+
+
+
+<p>— “EOS is not a blockchain, rather a distributed homogeneous database management system, a clear distinction in that their transactions are not cryptographically validated.”</p>
+
+
+
+<p>— “The performance metrics observed when factors such as real-world network latency and packet loss are implemented indicate that TPS in EOS approaches levels comparable to Ethereum.”</p>
+
+
+
+<p>— Various forms of consensus failure were shown in the network testing. Consensus is entirely dependent upon the voting mechanism which is based on social consensus, not algorithmic BFT consensus.”</p>
+
+
+
+<h4>Getting more technical</h4>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/a6980-12CAfLFUMbeGI-hVp3_cd0w.jpeg" alt=""/><figcaption>Preslav Mihaylov</figcaption></figure></div>
+
+
+
+<p>Before we dive into Assembly, Preslav gave to the audience an overview of Assembly Language and the Programming Language Types.</p>
+
+
+
+<p>We discussed what are the advantages and the disadvantages of Compiled Languages over Interpreted Languages VM based Languages.</p>
+
+
+
+<p>We also looked at how they actually work:</p>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/ea65c-10AtGU2tDpnSaIwwClCkQgw.png" alt=""/><figcaption>from assembly via Assembler directly to Machine&nbsp;code</figcaption></figure></div>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/9878f-1JfdOizhMyyJuRmXL-Yk_Dw.png" alt=""/><figcaption>Compiled Languages — Best Performance/ Lack of portability</figcaption></figure></div>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/33b93-1diwTxtzARUa00gyLjmzc8w.png" alt=""/><figcaption>Comfortable high-level features/ Worst Performance</figcaption></figure></div>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/668ba-1GKLDAUFVWXjyoE4U7xlV2A.png" alt=""/><figcaption>a mix between compiled and interpreted languages</figcaption></figure></div>
+
+
+
+<p>We also discussed how the EVM is working and what are its benefits</p>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/a4a23-1KZIljUvcBOiH4fhCb8-HlA.png" alt=""/><figcaption>platform independent</figcaption></figure></div>
+
+
+
+<p>Preslav explained the benefits of using Solidity Assembly, but also did not miss to explain the risks related to using it. Using Assembly to achieve features that are not yet introduced into Solidity can come to a high price if one messes up the opcode.</p>
+
+
+
+<p>During the Live Demo, we have been introduced to Basic Operations in Assembly aiming to boost developers confidence when they encounter Assembly at work.</p>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/ac280-1Ox5mVFGc1rkUEct4y-ypUw.png" alt=""/><figcaption>Basic operations in&nbsp;Assembly</figcaption></figure></div>
+
+
+
+<div class="wp-block-image wp-caption"><figure class="aligncenter"><img src="https://hack.bg/wp-content/uploads/2019/01/76c77-1gqbWtp2FZIAu_wK7wPNbyA.jpeg" alt=""/><figcaption>using jump to implement for loop in&nbsp;Assembly</figcaption></figure></div>
+
+
+
+<p>At the last part of Preslav&#8217;s presentation, we discussed the different types of memory in the EVM and their particularities.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Looking forward to meeting you on our next&nbsp;meetup.</p></blockquote>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>If you liked this article don&#8217;t hesitate to follow us on Medium. We are committed to developing<strong> the best Blockchain Developers Community in Europe</strong>!</p>
+
+
+
+<p>Special thanks to our guest lecturer Preslav Mihaylov and to the host of our fourth meetup SoftUni.</p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Watch the meetup session here:</p>
+
+
+
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe width="500" height="281" src="https://www.youtube.com/embed/BPdc_apZRWM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><figcaption>Introduction to Solidity Assembly &#8211; 0x04 [Blockchain Developers Meetup]</figcaption></figure>
+
+
+
+<h3><strong>References and Resources</strong></h3>
+
+
+
+<ul><li><a href="https://speakerdeck.com/pmihaylov/introduction-to-solidity-assembly?fbclid=IwAR1fCr9mdYOmpZVv-GiZBeV_Xl1LFSkV_mVpGu_YFAONlv6D8td4QMSNsI4" data-href="https://speakerdeck.com/pmihaylov/introduction-to-solidity-assembly?fbclid=IwAR1fCr9mdYOmpZVv-GiZBeV_Xl1LFSkV_mVpGu_YFAONlv6D8td4QMSNsI4" target="_blank" rel="noopener noreferrer"><strong>Preslav Mihaylov’s</strong> presentation</a></li><li><a href="https://speakerdeck.com/radkov/blockchain-developers-meetup-04" data-href="https://speakerdeck.com/radkov/blockchain-developers-meetup-04" target="_blank" rel="noopener noreferrer"><strong>Hristo Georgiev’s</strong> presentation</a></li><li><a href="https://www.youtube.com/watch?v=BPdc_apZRWM" data-href="https://www.youtube.com/watch?v=BPdc_apZRWM" target="_blank" rel="noopener noreferrer">Video recording</a></li></ul>
+
+
+
+<p><strong>News Sources mentioned in the meetup</strong></p>
+
+
+
+<ul><li><strong>Cardano</strong> &#8211;  <a rel="noreferrer noopener" href="https://smartereum.com/37313/cardano-future-forecast-cardano-ada-takes-its-blockchain-to-a-whole-new-level-with-a-new-toolkit-ada-news-today/" target="_blank">https://smartereum.com/37313/cardano-future-forecast-cardano-ada-takes-its-blockchain-to-a-whole-new-level-with-a-new-toolkit-ada-news-today/</a></li><li><strong>Liquid Network</strong>  &#8211; <a rel="noreferrer noopener" href="https://www.ccn.com/liquid-network-blockstreams-bitcoin-sidechain-is-now-live/" target="_blank">https://www.ccn.com/liquid-network-blockstreams-bitcoin-sidechain-is-now-live/</a></li><li><strong>ETH hard fork </strong> &#8211; <a rel="noreferrer noopener" href="https://ethereumworldnews.com/ethereum-constantinople-blockchain-upgrade-delayed-until-2019/" target="_blank">https://ethereumworldnews.com/ethereum-constantinople-blockchain-upgrade-delayed-until-2019/</a></li><li><strong>Exchanges security</strong>  &#8211; <a data-href="https://www.ccn.com/over-half-of-all-crypto-exchanges-have-security-vulnerabilities-report/amp/" rel="noopener noreferrer" href="https://www.ccn.com/over-half-of-all-crypto-exchanges-have-security-vulnerabilities-report/amp/" target="_blank">https://www.ccn.com/over-half-of-all-crypto-exchanges-have-security-vulnerabilities-report/amp/</a></li><li><strong>Zcash - Sapling </strong> &#8211;  <a data-href="https://www.coindesk.com/zcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster/" rel="noopener noreferrer" href="https://www.coindesk.com/zcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster/" target="_blank">https://www.coindesk.com/zcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster/</a></li><li><strong>Smarter Bitcoin RSK</strong>  &#8211; <a data-href="https://www.ccn.com/logistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts/" rel="noopener noreferrer" href="https://www.ccn.com/logistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts/" target="_blank">https://www.ccn.com/logistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts/</a></li><li><strong>EOS Report </strong> &#8211;  <a data-href="https://www.trustnodes.com/2018/11/05/eos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study" rel="noopener noreferrer" href="https://www.trustnodes.com/2018/11/05/eos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study" target="_blank">https://www.trustnodes.com/2018/11/05/eos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study</a></li></ul>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>If you are <strong>interested in talking</strong> on some cool topic, or you want to <strong>propose some topic</strong> to be discussed — just <strong>drop us a line at </strong><a href="mailto:events@hack.bg" data-href="mailto:events@hack.bg" target="_blank" rel="noopener noreferrer"><strong>events@hack.bg</strong></a> or write down a comment / reply.</p>
+
+
+
+<p>If you want to be informed for our next events and meetups — join us:</p>
+
+
+
+<p><strong>Blockchain Developers Meetup Group</strong>:</p>
+
+
+<style type="text/css">#meetup_oembed .mu_clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }* html #meetup_oembed .mu_clearfix, *:first-child+html #meetup_oembed .mu_clearfix { zoom: 1; }#meetup_oembed { background:#eee;border:1px solid #ccc;padding:10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;margin:0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; }#meetup_oembed h3 { font-weight:normal; margin:0 0 10px; padding:0; line-height:26px; font-family:Georgia,Palatino,serif; font-size:24px }#meetup_oembed p { margin: 0 0 10px; padding:0; line-height:16px; }#meetup_oembed img { border:none; margin:0; padding:0; }#meetup_oembed a, #meetup_oembed a:visited, #meetup_oembed a:link { color: #1B76B3; text-decoration: none; cursor: hand; cursor: pointer; }#meetup_oembed a:hover { color: #1B76B3; text-decoration: underline; }#meetup_oembed a.mu_button { font-size:14px; -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;border:2px solid #A7241D;color:white!important;text-decoration:none;background-color: #CA3E47; background-image: -moz-linear-gradient(top, #ca3e47, #a8252e); background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #a8252e), color-stop(1, #ca3e47));disvplay:inline-block;padding:5px 10px; }#meetup_oembed a.mu_button:hover { color: #fff!important; text-decoration: none; }#meetup_oembed .photo { width:50px; height:50px; overflow:hidden;background:#ccc;float:left;margin:0 5px 0 0;text-align:center;padding:1px; }#meetup_oembed .photo img { height:50px }#meetup_oembed .number { font-size:18px; }#meetup_oembed .thing { text-transform: uppercase; color: #555; }</style>
+<div id="meetup_oembed" style="height:423px">
+<div style="overflow:hidden;max-height:383px">
+<h3>Blockchain Developers Meetup (Bulgaria)</h3>
+<p style="margin:0 0 10px;font-size:12px;line-height:16px;">Sofia, BG <br />          <span style="font-size:14px;font-weight:bold;">144</span> <em>Developers</em></p>
+<p>          <a href="https://www.meetup.com/Blockchain-Developers-Meetup-Bulgaria/" target="_blank"><img src="https://secure.meetupstatic.com/photos/event/6/0/a/7/600_472464743.jpeg" style="float:right;max-width:150px;margin-right:0;" /></a>                          </p>
+<div style="margin-right:170px;line-height:16px;">In this group, we will share knowledge about blockchain and smart contract development. We will talk about Ethereum, Aeternity, Polkadot, NEO, EOS, RSK, Hyperledger and other &#8230;</div>
+<p style="font-size:16px;margin:10px 0 5px;line-height:18px;">Next Meetup</p>
+<p style="margin-bottom:2px;line-height:16px;font-size:14px;"><a href="https://www.meetup.com/Blockchain-Developers-Meetup-Bulgaria/events/260215703/" target="_blank">0x09. TBA</a></p>
+<p style="line-height:18px;">Thursday, Apr 25, 2019,  7:00 PM<br /><span style="color:#4F8A10;">1 Attending</span></p>
+</p></div>
+<p style="margin:10px 0 5px;"><a href="https://www.meetup.com/Blockchain-Developers-Meetup-Bulgaria/" target="_blank" class="mu_button">Check out this Meetup Group &rarr;</a></p>
+</div>
+
+
+
+<p><strong>Blockchain Developers Facebook Group</strong>:</p>
+
+
+
+<ul><li><a href="http://facebook.com/groups/BlockchainDevelopersMeetup">Blockchain Developers Meetup Facebook Group</a></li></ul>
+
+
+
+<p><strong>Website</strong>: <a href="https://hack.bg" data-href="https://hack.bg" target="_blank" rel="noopener noreferrer">https://hack.bg</a></p>
+
+
+
+<p><strong>Follow us on social media:</strong></p>
+
+
+
+<ul><li><a href="https://twitter.com/hack_bg" data-href="https://twitter.com/hack_bg" target="_blank" rel="noopener noreferrer">Twitter</a></li><li><a href="https://facebook.com/hackbg" data-href="https://facebook.com/hackbg" target="_blank" rel="noopener noreferrer">Facebook</a></li><li><a href="https://www.linkedin.com/company/hackbg-blockchain-web-software-solutions/" data-href="https://www.linkedin.com/company/hackbg-blockchain-web-software-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
+</div><h2 class="font-family-sans-serif h4">Tags:</h2><ul class="list-inline"><li class="list-inline-item"><a href="/tag/assembly" target="_self" class="btn mb-2 btn-primary btn-sm">
+            Assembly (2)
+          </a></li><li class="list-inline-item"><a href="/tag/blockchain" target="_self" class="btn mb-2 btn-primary btn-sm">
+            Blockchain (42)
+          </a></li><li class="list-inline-item"><a href="/tag/ethereum" target="_self" class="btn mb-2 btn-primary btn-sm">
+            Ethereum (11)
+          </a></li><li class="list-inline-item"><a href="/tag/events" target="_self" class="btn mb-2 btn-primary btn-sm">
+            Events (7)
+          </a></li><li class="list-inline-item"><a href="/tag/solidity" target="_self" class="btn mb-2 btn-primary btn-sm">
+            Solidity (6)
+          </a></li></ul></div></article></div></main><div class="bg-light mt-4 mt-lg-5 p-4 rounded col-lg-3"><aside class="mb-5"><h2 class="mb-3 font-family-sans-serif h4">About</h2><p>
+      Hello! You're looking at a <a href="https://bootstrap-vue.js.org">BootstrapVue</a> powered
+      <a href="https://gridsome.org">Gridsome</a> starter that uses WordPress for content. Let me
+      tell you that Gridsome is simply awesome! Happy coding!
+      <span class="text-primary">♥</span></p></aside><aside class="mb-5 mb-5"><h2 class="mb-3 font-family-sans-serif h4">All Tags</h2><ul class="list-inline"><li class="list-inline-item mb-2"><a href="/tag/adex" target="_self" class="btn btn-primary btn-sm">
+        AdEx (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/aepp" target="_self" class="btn btn-primary btn-sm">
+        Aepp (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/aeternity" target="_self" class="btn btn-primary btn-sm">
+        Aeternity (13)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/aeternity-universe" target="_self" class="btn btn-primary btn-sm">
+        Aeternity Universe (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/aeternitystarfleet" target="_self" class="btn btn-primary btn-sm">
+        Aeternity Starfleet (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ai" target="_self" class="btn btn-primary btn-sm">
+        AI (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/amazon-aws" target="_self" class="btn btn-primary btn-sm">
+        Amazon AWS (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/application" target="_self" class="btn btn-primary btn-sm">
+        Application (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/art" target="_self" class="btn btn-primary btn-sm">
+        Art (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/assembly" target="_self" class="btn btn-primary btn-sm">
+        Assembly (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/berlin" target="_self" class="btn btn-primary btn-sm">
+        Berlin (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/bitcoi" target="_self" class="btn btn-primary btn-sm">
+        Bitcoi (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/bitcoin" target="_self" class="btn btn-primary btn-sm">
+        Bitcoin (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain" target="_self" class="btn btn-primary btn-sm">
+        Blockchain (42)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-audit" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Audit (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-backend" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Backend (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-consulting" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Consulting (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-development" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Development (10)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-frontend" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Frontend (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-mobile" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Mobile (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockchain-network" target="_self" class="btn btn-primary btn-sm">
+        Blockchain Network (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blockrocket" target="_self" class="btn btn-primary btn-sm">
+        Blockrocket (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/blog" target="_self" class="btn btn-primary btn-sm">
+        Blog (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/browser-extension" target="_self" class="btn btn-primary btn-sm">
+        browser extension (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/buidl" target="_self" class="btn btn-primary btn-sm">
+        BUIDL (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/bulgaria" target="_self" class="btn btn-primary btn-sm">
+        Bulgaria (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/business" target="_self" class="btn btn-primary btn-sm">
+        Business (11)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/chaos-communication-camp" target="_self" class="btn btn-primary btn-sm">
+        Chaos Communication Camp (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/conference" target="_self" class="btn btn-primary btn-sm">
+        Conference (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/cosmos" target="_self" class="btn btn-primary btn-sm">
+        Cosmos (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/crypto" target="_self" class="btn btn-primary btn-sm">
+        Crypto (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/cumulus" target="_self" class="btn btn-primary btn-sm">
+        Cumulus (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/dao" target="_self" class="btn btn-primary btn-sm">
+        DAO (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/dappcon" target="_self" class="btn btn-primary btn-sm">
+        Dappcon (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/decentralized" target="_self" class="btn btn-primary btn-sm">
+        Decentralized (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/decentralized-applications" target="_self" class="btn btn-primary btn-sm">
+        Decentralized Applications (5)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/decentralized-voting" target="_self" class="btn btn-primary btn-sm">
+        Decentralized Voting (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/defi" target="_self" class="btn btn-primary btn-sm">
+        defi (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/developer" target="_self" class="btn btn-primary btn-sm">
+        Developer (5)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/development" target="_self" class="btn btn-primary btn-sm">
+        Development (10)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/dns" target="_self" class="btn btn-primary btn-sm">
+        DNS (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/dronathon" target="_self" class="btn btn-primary btn-sm">
+        dronathon (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/drones" target="_self" class="btn btn-primary btn-sm">
+        drones (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/education" target="_self" class="btn btn-primary btn-sm">
+        Education (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ethereum" target="_self" class="btn btn-primary btn-sm">
+        Ethereum (11)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/europe" target="_self" class="btn btn-primary btn-sm">
+        Europe (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/events" target="_self" class="btn btn-primary btn-sm">
+        Events (7)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/finance" target="_self" class="btn btn-primary btn-sm">
+        finance (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/fintech" target="_self" class="btn btn-primary btn-sm">
+        Fintech (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/fundraising" target="_self" class="btn btn-primary btn-sm">
+        Fundraising (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/gaming" target="_self" class="btn btn-primary btn-sm">
+        Gaming (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/google" target="_self" class="btn btn-primary btn-sm">
+        Google (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/governance" target="_self" class="btn btn-primary btn-sm">
+        Governance (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/grandpa" target="_self" class="btn btn-primary btn-sm">
+        GRANDPA (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/hackathons" target="_self" class="btn btn-primary btn-sm">
+        Hackathons (3)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/hackbg" target="_self" class="btn btn-primary btn-sm">
+        Hackbg (6)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/healthcare" target="_self" class="btn btn-primary btn-sm">
+        Healthcare (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/hyperledger" target="_self" class="btn btn-primary btn-sm">
+        Hyperledger (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ico" target="_self" class="btn btn-primary btn-sm">
+        ICO (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ico-fundraising" target="_self" class="btn btn-primary btn-sm">
+        ICO Fundraising (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ico-or-sto" target="_self" class="btn btn-primary btn-sm">
+        ICO or STO (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ico-vs-sto" target="_self" class="btn btn-primary btn-sm">
+        ICO vs STO (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/idea" target="_self" class="btn btn-primary btn-sm">
+        Idea (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ieo" target="_self" class="btn btn-primary btn-sm">
+        IEO (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/incubator" target="_self" class="btn btn-primary btn-sm">
+        Incubator (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/initial-coin-offering" target="_self" class="btn btn-primary btn-sm">
+        Initial Coin Offering (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/initial-exchange-offering" target="_self" class="btn btn-primary btn-sm">
+        Initial Exchange Offering (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/insurance" target="_self" class="btn btn-primary btn-sm">
+        Insurance (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/investor" target="_self" class="btn btn-primary btn-sm">
+        Investor (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/meetup" target="_self" class="btn btn-primary btn-sm">
+        Meetup (17)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/metamask" target="_self" class="btn btn-primary btn-sm">
+        MetaMask (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/ownership" target="_self" class="btn btn-primary btn-sm">
+        Ownership (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/parachain" target="_self" class="btn btn-primary btn-sm">
+        Parachain (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/partnership" target="_self" class="btn btn-primary btn-sm">
+        Partnership (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/poland" target="_self" class="btn btn-primary btn-sm">
+        Poland (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/polkadot" target="_self" class="btn btn-primary btn-sm">
+        Polkadot (4)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/real-estate" target="_self" class="btn btn-primary btn-sm">
+        Real Estate (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/remote" target="_self" class="btn btn-primary btn-sm">
+        Remote (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/scynet" target="_self" class="btn btn-primary btn-sm">
+        ScyNet (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/security" target="_self" class="btn btn-primary btn-sm">
+        Security (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/security-token-offering" target="_self" class="btn btn-primary btn-sm">
+        Security Token Offering (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/services" target="_self" class="btn btn-primary btn-sm">
+        Services (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/smart-contract" target="_self" class="btn btn-primary btn-sm">
+        Smart Contract (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/smart-contracts" target="_self" class="btn btn-primary btn-sm">
+        Smart Contracts (17)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/sofia" target="_self" class="btn btn-primary btn-sm">
+        Sofia (5)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/software-development" target="_self" class="btn btn-primary btn-sm">
+        Software Development (2)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/solidity" target="_self" class="btn btn-primary btn-sm">
+        Solidity (6)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/sophia-ml" target="_self" class="btn btn-primary btn-sm">
+        Sophia ML (3)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/startup" target="_self" class="btn btn-primary btn-sm">
+        Startup (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/state-channels" target="_self" class="btn btn-primary btn-sm">
+        State Channels (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/sto" target="_self" class="btn btn-primary btn-sm">
+        STO (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/sto-fundraising" target="_self" class="btn btn-primary btn-sm">
+        STO Fundraising (0)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/strongforce" target="_self" class="btn btn-primary btn-sm">
+        StrongForce (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/substrate" target="_self" class="btn btn-primary btn-sm">
+        Substrate (3)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/supply-chain" target="_self" class="btn btn-primary btn-sm">
+        supply chain (3)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/telerik" target="_self" class="btn btn-primary btn-sm">
+        Telerik (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/tendermint" target="_self" class="btn btn-primary btn-sm">
+        Tendermint (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/tezos" target="_self" class="btn btn-primary btn-sm">
+        Tezos (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/token" target="_self" class="btn btn-primary btn-sm">
+        Token (1)
+      </a></li><li class="list-inline-item mb-2"><a href="/tag/tools" target="_self" class="btn btn-primary btn-sm">
+        Tools (1)
+      </a></li></ul></aside><aside class="mb-5"><h2 class="mb-3 font-family-sans-serif h4">Categories</h2><ul><li><a href="/category/events">Events (27)</a></li><li><a href="/category/meetups">Meet-ups (22)</a></li><li><a href="/category/blockchain-and-business">Blockchain and Business (13)</a></li><li><a href="/category/blockchain-tech-talks">Tech Talks (12)</a></li><li><a href="/category/tutorials">Tutorials (8)</a></li><li><a href="/category/apperances">Apperances (8)</a></li><li><a href="/category/news">News (7)</a></li><li><a href="/category/partnerships">Partnerships (1)</a></li><li><a href="/category/blog">Blog (1)</a></li><li><a href="/category/uncategorized">Uncategorized (0)</a></li><li><a href="/category/podcasts">Podcasts (0)</a></li><li><a href="/category/dlt-blockchain-development">Distributed Ledger Technology and Blockchain Development (0)</a></li></ul></aside></div></div></div><footer class="bg-white text-center py-5 mt-5">
+  Built with <a href="https://gridsome.org/">Gridsome</a><span class="font-family-headings"> &amp; </span><a href="https://bootstrap-vue.js.org/">BootstrapVue</a></footer></div>
+    <script>window.__INITIAL_STATE__={"data":{"post":{"title":"Blockchain Developers Meetup Bulgaria- #0x04  - Introduction to Solidity Assembly","date":"2018-11-09T16:10:52","content":"\n\u003Cp\u003EFour months had passed since the kick off of our awesome blockchain developers meetup. So far we’ve had very good speakers and topics. Moreover, we are happy to see new faces in the rows and to see our community growing.\u003C\u002Fp\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F2b818-1YBU7COOCqWsP6CSpe2E5Wg.jpeg\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003EBlockchain Developers Meetup Bulgaria — 04\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EThis time we had a small technical issue, the youtube live stream crashed a few times and we were unable to fix it on time, so we couldn’t record the whole session and we would like to apologize for that to the people watching us online. In this post, we will share with you the essence of yesterday’s meet-up.\u003C\u002Fp\u003E\n\n\n\n\u003Chr class=\"wp-block-separator\"\u002F\u003E\n\n\n\n\u003Cp\u003EThe event went as follows.\u003C\u002Fp\u003E\n\n\n\n\u003Ch4\u003EIn the first&nbsp;part\u003C\u002Fh4\u003E\n\n\n\n\u003Cp\u003EWe covered crypto related news covering Forks, Security, and technology advancements, without going into many technical details. In the second part we have our fantastic speaker \u003Ca href=\"https:\u002F\u002Fpmihaylov.com\u002F\" data-href=\"https:\u002F\u002Fpmihaylov.com\u002F\" target=\"_blank\" rel=\"noopener noreferrer\"\u003E\u003Cstrong\u003EPreslav Mihaylov\u003C\u002Fstrong\u003E\u003C\u002Fa\u003E, head of blockchain training at \u003Ca href=\"https:\u002F\u002Fsoftuni.bg\" data-href=\"https:\u002F\u002Fsoftuni.bg\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ESoftware University\u003C\u002Fa\u003E (SoftUni Sofia), introduce the public to \u003Cstrong\u003ESolidity Assembly\u003C\u002Fstrong\u003E.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003ELet’s look more into the details&nbsp;…\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EOur CEO \u003Ca href=\"https:\u002F\u002Fmedium.com\u002Fu\u002F23eaffb29922\" data-href=\"https:\u002F\u002Fmedium.com\u002Fu\u002F23eaffb29922\" data-anchor-type=\"2\" data-user-id=\"23eaffb29922\" data-action-value=\"23eaffb29922\" data-action=\"show-user-card\" data-action-type=\"hover\" target=\"_blank\" rel=\"noopener noreferrer\"\u003EMilen Radkov\u003C\u002Fa\u003E went to meet with some cool guys at \u003Ca href=\"https:\u002F\u002Fwebsummit.com\" data-href=\"https:\u002F\u002Fwebsummit.com\" target=\"_blank\" rel=\"noopener noreferrer\"\u003E\u003Cstrong\u003EWeb Summit\u003C\u002Fstrong\u003E\u003C\u002Fa\u003E in Lisbon, so this time our Business Development Manager Hristo led the party — it was about time someone else to do so.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EWe spoke about the recently released \u003Cstrong\u003ECardano Rust Project,\u003C\u002Fstrong\u003E which is basically an API allowing third-party developers to dive into \u003Ca href=\"https:\u002F\u002Fwww.cardano.org\u002Fen\u002Fhome\u002F\" data-href=\"https:\u002F\u002Fwww.cardano.org\u002Fen\u002Fhome\u002F\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ECardano\u003C\u002Fa\u003E. It is worth mentioning that the project is a toolkit compatible for iOS, Web, and Android.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003ESecondly, we discussed the rise of the \u003Cstrong\u003EBitcoin\u003C\u002Fstrong\u003E \u003Cstrong\u003Esidechains\u003C\u002Fstrong\u003E with the release of \u003Ca href=\"https:\u002F\u002Fblockstream.com\u002Fliquid\u002F\" data-href=\"https:\u002F\u002Fblockstream.com\u002Fliquid\u002F\" target=\"_blank\" rel=\"noopener noreferrer\"\u003EBlockstream’s Liquid Network\u003C\u002Fa\u003E. An alternative to the \u003Cstrong\u003ELightning network \u003C\u002Fstrong\u003Ebut with focus on exchanges and the big financial institutions(worth having a look at).\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EWe did not miss to mention the unsuccessful release of Constantinople Hard Fork that did not manage to sync after launch with the Testnet. Few reasons were mentioned by \u003Ca href=\"https:\u002F\u002Ftwitter.com\u002F5chdn\" data-href=\"https:\u002F\u002Ftwitter.com\u002F5chdn\" target=\"_blank\" rel=\"noopener noreferrer\"\u003EAfri Schoedon\u003C\u002Fa\u003E, Parity dev and the takeaway is that the fork will be delayed until sometime in 2019.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003ENext, we looked at a rather worrisome report saying that over 54% of the 100 top daily volume exchanges have security issues. And the most common issues are related to:\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003EConsole errors\u003C\u002Fli\u003E\u003Cli\u003EUser Account Security\u003C\u002Fli\u003E\u003Cli\u003ERegistar and Domain Security\u003C\u002Fli\u003E\u003Cli\u003EWeb Protocol Security\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Cp\u003ENext topic was the exiting release of Sapling, Zcash hard fork allowing shielded transfers to be completed with 100 times less memory (around 40mb) and probably six or more times faster. With this upgrade Zcash confidential transactions are getting mobile friendly because one does not need to run a full node anymore to run them. Zcash are bringing to us their awesome technology that will lead to us to the era of “privacy-by-default”.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EJust before the end of the news review, we mentioned the first Truckload Shipment Using Bitcoin Smart Contracts with Rootstock (RSK). During the shipment, the Funds for the transaction were held in escrow by the smart contract on the integrated RSK platform and were automatically released to the carrier upon delivery.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EAnd lastly, we discussed a recent EOS report pointing out the EOS has misled the public on the number of transaction that it can handle. The study was funded by the Bounties Network which is led by Brent Xu of ConsenSys and for this purpose replicated the EOS network to analyze its performance during two months of testing. The conclusions it reached are fairly damning. They say, for example:\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E— “EOS is not a blockchain, rather a distributed homogeneous database management system, a clear distinction in that their transactions are not cryptographically validated.”\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E— “The performance metrics observed when factors such as real-world network latency and packet loss are implemented indicate that TPS in EOS approaches levels comparable to Ethereum.”\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E— Various forms of consensus failure were shown in the network testing. Consensus is entirely dependent upon the voting mechanism which is based on social consensus, not algorithmic BFT consensus.”\u003C\u002Fp\u003E\n\n\n\n\u003Ch4\u003EGetting more technical\u003C\u002Fh4\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002Fa6980-12CAfLFUMbeGI-hVp3_cd0w.jpeg\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003EPreslav Mihaylov\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EBefore we dive into Assembly, Preslav gave to the audience an overview of Assembly Language and the Programming Language Types.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EWe discussed what are the advantages and the disadvantages of Compiled Languages over Interpreted Languages VM based Languages.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EWe also looked at how they actually work:\u003C\u002Fp\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002Fea65c-10AtGU2tDpnSaIwwClCkQgw.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003Efrom assembly via Assembler directly to Machine&nbsp;code\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F9878f-1JfdOizhMyyJuRmXL-Yk_Dw.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003ECompiled Languages — Best Performance\u002F Lack of portability\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F33b93-1diwTxtzARUa00gyLjmzc8w.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003EComfortable high-level features\u002F Worst Performance\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F668ba-1GKLDAUFVWXjyoE4U7xlV2A.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003Ea mix between compiled and interpreted languages\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EWe also discussed how the EVM is working and what are its benefits\u003C\u002Fp\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002Fa4a23-1KZIljUvcBOiH4fhCb8-HlA.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003Eplatform independent\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EPreslav explained the benefits of using Solidity Assembly, but also did not miss to explain the risks related to using it. Using Assembly to achieve features that are not yet introduced into Solidity can come to a high price if one messes up the opcode.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EDuring the Live Demo, we have been introduced to Basic Operations in Assembly aiming to boost developers confidence when they encounter Assembly at work.\u003C\u002Fp\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002Fac280-1Ox5mVFGc1rkUEct4y-ypUw.png\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003EBasic operations in&nbsp;Assembly\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cdiv class=\"wp-block-image wp-caption\"\u003E\u003Cfigure class=\"aligncenter\"\u003E\u003Cimg src=\"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F76c77-1gqbWtp2FZIAu_wK7wPNbyA.jpeg\" alt=\"\"\u002F\u003E\u003Cfigcaption\u003Eusing jump to implement for loop in&nbsp;Assembly\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003EAt the last part of Preslav&#8217;s presentation, we discussed the different types of memory in the EVM and their particularities.\u003C\u002Fp\u003E\n\n\n\n\u003Cblockquote class=\"wp-block-quote\"\u003E\u003Cp\u003ELooking forward to meeting you on our next&nbsp;meetup.\u003C\u002Fp\u003E\u003C\u002Fblockquote\u003E\n\n\n\n\u003Chr class=\"wp-block-separator\"\u002F\u003E\n\n\n\n\u003Cp\u003EIf you liked this article don&#8217;t hesitate to follow us on Medium. We are committed to developing\u003Cstrong\u003E the best Blockchain Developers Community in Europe\u003C\u002Fstrong\u003E!\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003ESpecial thanks to our guest lecturer Preslav Mihaylov and to the host of our fourth meetup SoftUni.\u003C\u002Fp\u003E\n\n\n\n\u003Chr class=\"wp-block-separator\"\u002F\u003E\n\n\n\n\u003Cp\u003EWatch the meetup session here:\u003C\u002Fp\u003E\n\n\n\n\u003Cfigure class=\"wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio\"\u003E\u003Cdiv class=\"wp-block-embed__wrapper\"\u003E\n\u003Ciframe width=\"500\" height=\"281\" src=\"https:\u002F\u002Fwww.youtube.com\u002Fembed\u002FBPdc_apZRWM?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen\u003E\u003C\u002Fiframe\u003E\n\u003C\u002Fdiv\u003E\u003Cfigcaption\u003EIntroduction to Solidity Assembly &#8211; 0x04 [Blockchain Developers Meetup]\u003C\u002Ffigcaption\u003E\u003C\u002Ffigure\u003E\n\n\n\n\u003Ch3\u003E\u003Cstrong\u003EReferences and Resources\u003C\u002Fstrong\u003E\u003C\u002Fh3\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fspeakerdeck.com\u002Fpmihaylov\u002Fintroduction-to-solidity-assembly?fbclid=IwAR1fCr9mdYOmpZVv-GiZBeV_Xl1LFSkV_mVpGu_YFAONlv6D8td4QMSNsI4\" data-href=\"https:\u002F\u002Fspeakerdeck.com\u002Fpmihaylov\u002Fintroduction-to-solidity-assembly?fbclid=IwAR1fCr9mdYOmpZVv-GiZBeV_Xl1LFSkV_mVpGu_YFAONlv6D8td4QMSNsI4\" target=\"_blank\" rel=\"noopener noreferrer\"\u003E\u003Cstrong\u003EPreslav Mihaylov’s\u003C\u002Fstrong\u003E presentation\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fspeakerdeck.com\u002Fradkov\u002Fblockchain-developers-meetup-04\" data-href=\"https:\u002F\u002Fspeakerdeck.com\u002Fradkov\u002Fblockchain-developers-meetup-04\" target=\"_blank\" rel=\"noopener noreferrer\"\u003E\u003Cstrong\u003EHristo Georgiev’s\u003C\u002Fstrong\u003E presentation\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=BPdc_apZRWM\" data-href=\"https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=BPdc_apZRWM\" target=\"_blank\" rel=\"noopener noreferrer\"\u003EVideo recording\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003ENews Sources mentioned in the meetup\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003E\u003Cstrong\u003ECardano\u003C\u002Fstrong\u003E &#8211;  \u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fsmartereum.com\u002F37313\u002Fcardano-future-forecast-cardano-ada-takes-its-blockchain-to-a-whole-new-level-with-a-new-toolkit-ada-news-today\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fsmartereum.com\u002F37313\u002Fcardano-future-forecast-cardano-ada-takes-its-blockchain-to-a-whole-new-level-with-a-new-toolkit-ada-news-today\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003ELiquid Network\u003C\u002Fstrong\u003E  &#8211; \u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fwww.ccn.com\u002Fliquid-network-blockstreams-bitcoin-sidechain-is-now-live\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fwww.ccn.com\u002Fliquid-network-blockstreams-bitcoin-sidechain-is-now-live\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003EETH hard fork \u003C\u002Fstrong\u003E &#8211; \u003Ca rel=\"noreferrer noopener\" href=\"https:\u002F\u002Fethereumworldnews.com\u002Fethereum-constantinople-blockchain-upgrade-delayed-until-2019\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fethereumworldnews.com\u002Fethereum-constantinople-blockchain-upgrade-delayed-until-2019\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003EExchanges security\u003C\u002Fstrong\u003E  &#8211; \u003Ca data-href=\"https:\u002F\u002Fwww.ccn.com\u002Fover-half-of-all-crypto-exchanges-have-security-vulnerabilities-report\u002Famp\u002F\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.ccn.com\u002Fover-half-of-all-crypto-exchanges-have-security-vulnerabilities-report\u002Famp\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fwww.ccn.com\u002Fover-half-of-all-crypto-exchanges-have-security-vulnerabilities-report\u002Famp\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003EZcash - Sapling \u003C\u002Fstrong\u003E &#8211;  \u003Ca data-href=\"https:\u002F\u002Fwww.coindesk.com\u002Fzcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster\u002F\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.coindesk.com\u002Fzcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fwww.coindesk.com\u002Fzcashs-next-upgrade-to-make-private-transactions-100x-lighter-and-6x-faster\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003ESmarter Bitcoin RSK\u003C\u002Fstrong\u003E  &#8211; \u003Ca data-href=\"https:\u002F\u002Fwww.ccn.com\u002Flogistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts\u002F\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.ccn.com\u002Flogistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts\u002F\" target=\"_blank\"\u003Ehttps:\u002F\u002Fwww.ccn.com\u002Flogistics-firm-completes-first-truckload-shipment-using-bitcoin-smart-contracts\u002F\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cstrong\u003EEOS Report \u003C\u002Fstrong\u003E &#8211;  \u003Ca data-href=\"https:\u002F\u002Fwww.trustnodes.com\u002F2018\u002F11\u002F05\u002Feos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.trustnodes.com\u002F2018\u002F11\u002F05\u002Feos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study\" target=\"_blank\"\u003Ehttps:\u002F\u002Fwww.trustnodes.com\u002F2018\u002F11\u002F05\u002Feos-misled-the-public-on-the-number-of-transactions-it-can-handle-says-new-study\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Chr class=\"wp-block-separator\"\u002F\u003E\n\n\n\n\u003Cp\u003EIf you are \u003Cstrong\u003Einterested in talking\u003C\u002Fstrong\u003E on some cool topic, or you want to \u003Cstrong\u003Epropose some topic\u003C\u002Fstrong\u003E to be discussed — just \u003Cstrong\u003Edrop us a line at \u003C\u002Fstrong\u003E\u003Ca href=\"mailto:events@hack.bg\" data-href=\"mailto:events@hack.bg\" target=\"_blank\" rel=\"noopener noreferrer\"\u003E\u003Cstrong\u003Eevents@hack.bg\u003C\u002Fstrong\u003E\u003C\u002Fa\u003E or write down a comment \u002F reply.\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003EIf you want to be informed for our next events and meetups — join us:\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EBlockchain Developers Meetup Group\u003C\u002Fstrong\u003E:\u003C\u002Fp\u003E\n\n\n\u003Cstyle type=\"text\u002Fcss\"\u003E#meetup_oembed .mu_clearfix:after { visibility: hidden; display: block; font-size: 0; content: \" \"; clear: both; height: 0; }* html #meetup_oembed .mu_clearfix, *:first-child+html #meetup_oembed .mu_clearfix { zoom: 1; }#meetup_oembed { background:#eee;border:1px solid #ccc;padding:10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;margin:0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; }#meetup_oembed h3 { font-weight:normal; margin:0 0 10px; padding:0; line-height:26px; font-family:Georgia,Palatino,serif; font-size:24px }#meetup_oembed p { margin: 0 0 10px; padding:0; line-height:16px; }#meetup_oembed img { border:none; margin:0; padding:0; }#meetup_oembed a, #meetup_oembed a:visited, #meetup_oembed a:link { color: #1B76B3; text-decoration: none; cursor: hand; cursor: pointer; }#meetup_oembed a:hover { color: #1B76B3; text-decoration: underline; }#meetup_oembed a.mu_button { font-size:14px; -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;border:2px solid #A7241D;color:white!important;text-decoration:none;background-color: #CA3E47; background-image: -moz-linear-gradient(top, #ca3e47, #a8252e); background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #a8252e), color-stop(1, #ca3e47));disvplay:inline-block;padding:5px 10px; }#meetup_oembed a.mu_button:hover { color: #fff!important; text-decoration: none; }#meetup_oembed .photo { width:50px; height:50px; overflow:hidden;background:#ccc;float:left;margin:0 5px 0 0;text-align:center;padding:1px; }#meetup_oembed .photo img { height:50px }#meetup_oembed .number { font-size:18px; }#meetup_oembed .thing { text-transform: uppercase; color: #555; }\u003C\u002Fstyle\u003E\n\u003Cdiv id=\"meetup_oembed\" style=\"height:423px\"\u003E\n\u003Cdiv style=\"overflow:hidden;max-height:383px\"\u003E\n\u003Ch3\u003EBlockchain Developers Meetup (Bulgaria)\u003C\u002Fh3\u003E\n\u003Cp style=\"margin:0 0 10px;font-size:12px;line-height:16px;\"\u003ESofia, BG \u003Cbr \u002F\u003E          \u003Cspan style=\"font-size:14px;font-weight:bold;\"\u003E144\u003C\u002Fspan\u003E \u003Cem\u003EDevelopers\u003C\u002Fem\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E          \u003Ca href=\"https:\u002F\u002Fwww.meetup.com\u002FBlockchain-Developers-Meetup-Bulgaria\u002F\" target=\"_blank\"\u003E\u003Cimg src=\"https:\u002F\u002Fsecure.meetupstatic.com\u002Fphotos\u002Fevent\u002F6\u002F0\u002Fa\u002F7\u002F600_472464743.jpeg\" style=\"float:right;max-width:150px;margin-right:0;\" \u002F\u003E\u003C\u002Fa\u003E                          \u003C\u002Fp\u003E\n\u003Cdiv style=\"margin-right:170px;line-height:16px;\"\u003EIn this group, we will share knowledge about blockchain and smart contract development. We will talk about Ethereum, Aeternity, Polkadot, NEO, EOS, RSK, Hyperledger and other &#8230;\u003C\u002Fdiv\u003E\n\u003Cp style=\"font-size:16px;margin:10px 0 5px;line-height:18px;\"\u003ENext Meetup\u003C\u002Fp\u003E\n\u003Cp style=\"margin-bottom:2px;line-height:16px;font-size:14px;\"\u003E\u003Ca href=\"https:\u002F\u002Fwww.meetup.com\u002FBlockchain-Developers-Meetup-Bulgaria\u002Fevents\u002F260215703\u002F\" target=\"_blank\"\u003E0x09. TBA\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cp style=\"line-height:18px;\"\u003EThursday, Apr 25, 2019,  7:00 PM\u003Cbr \u002F\u003E\u003Cspan style=\"color:#4F8A10;\"\u003E1 Attending\u003C\u002Fspan\u003E\u003C\u002Fp\u003E\n\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E\n\u003Cp style=\"margin:10px 0 5px;\"\u003E\u003Ca href=\"https:\u002F\u002Fwww.meetup.com\u002FBlockchain-Developers-Meetup-Bulgaria\u002F\" target=\"_blank\" class=\"mu_button\"\u003ECheck out this Meetup Group &rarr;\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003C\u002Fdiv\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EBlockchain Developers Facebook Group\u003C\u002Fstrong\u003E:\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003E\u003Ca href=\"http:\u002F\u002Ffacebook.com\u002Fgroups\u002FBlockchainDevelopersMeetup\"\u003EBlockchain Developers Meetup Facebook Group\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EWebsite\u003C\u002Fstrong\u003E: \u003Ca href=\"https:\u002F\u002Fhack.bg\" data-href=\"https:\u002F\u002Fhack.bg\" target=\"_blank\" rel=\"noopener noreferrer\"\u003Ehttps:\u002F\u002Fhack.bg\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cp\u003E\u003Cstrong\u003EFollow us on social media:\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n\n\u003Cul\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Ftwitter.com\u002Fhack_bg\" data-href=\"https:\u002F\u002Ftwitter.com\u002Fhack_bg\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ETwitter\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Ffacebook.com\u002Fhackbg\" data-href=\"https:\u002F\u002Ffacebook.com\u002Fhackbg\" target=\"_blank\" rel=\"noopener noreferrer\"\u003EFacebook\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fwww.linkedin.com\u002Fcompany\u002Fhackbg-blockchain-web-software-solutions\u002F\" data-href=\"https:\u002F\u002Fwww.linkedin.com\u002Fcompany\u002Fhackbg-blockchain-web-software-solutions\u002F\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ELinkedIn\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\n","featuredMedia":{"sourceUrl":"https:\u002F\u002Fhack.bg\u002Fwp-content\u002Fuploads\u002F2019\u002F01\u002F2b818-1YBU7COOCqWsP6CSpe2E5Wg.jpeg","altText":"blockchain-developers-bulgaria","mediaDetails":{"width":800}},"categories":[{"id":"5","title":"Events","path":"\u002Fcategory\u002Fevents"},{"id":"71","title":"Meet-ups","path":"\u002Fcategory\u002Fmeetups"}],"tags":[{"id":"70","title":"Assembly","path":"\u002Ftag\u002Fassembly","count":2},{"id":"13","title":"Blockchain","path":"\u002Ftag\u002Fblockchain","count":42},{"id":"12","title":"Ethereum","path":"\u002Ftag\u002Fethereum","count":11},{"id":"34","title":"Events","path":"\u002Ftag\u002Fevents","count":7},{"id":"14","title":"Solidity","path":"\u002Ftag\u002Fsolidity","count":6}],"author":{"name":"Hristo Georgiev","path":"\u002Fauthor\u002Fhgeorgiev"}}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.661f73b5.js" defer></script><script src="/assets/js/page--src--templates--word-press-post-vue.0bba2f14.js" defer></script>
+  </body>
+</html>
