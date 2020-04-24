@@ -4,3 +4,10 @@
 </h1>
 
 <br>
+
+
+## Start the project
+
+```sh
+yarn dev
+```
