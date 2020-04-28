@@ -1,6 +1,5 @@
 // bootstrap
 import BootstrapVue from 'bootstrap-vue'
-import '~/assets/style/style.css'
 //global stylesheet
 import '~/assets/style/styles.scss'
 import DefaultLayout from '~/layouts/Default.vue'
