@@ -3,15 +3,9 @@ set -e
 
 APP_NAME=stage
 
-echo "${DEPLOY_KNOWN_HOSTS_BASE64}" | base64 --decode >> ~/.ssh/known_hosts
-echo "${DEPLOY_USER_KEY_BASE64}" | base64 --decode > /tmp/user-key
-eval "$(ssh-agent -s)"
-chmod 600 /tmp/user-key
-ssh-add /tmp/user-key
-
 DOMAIN=`echo $TRAVIS_BRANCH | tr '[:punct:]' '-'`
 
-rsync -e "ssh -p 2022" -r -v dist/* root@hack.bg:/data/$APP_NAME/$DOMAIN
+rsync -e "ssh -p 1022" -r -v dist/* root@hack.bg:/data/$APP_NAME/$DOMAIN
 
 URL=$DOMAIN.$APP_NAME.hack.bg
 echo "Deployed to $URL"
