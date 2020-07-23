@@ -5,7 +5,7 @@ APP_NAME=stage
 
 DOMAIN=`echo $TRAVIS_BRANCH | tr '[:punct:]' '-'`
 
-rsync -e "ssh -p 1022" -r -v dist/* root@hack.bg:~/data/$APP_NAME/$DOMAIN
+rsync -e "ssh -p 1022" -r -v dist/* root@hack.bg:~/var/www/html/$APP_NAME/$DOMAIN
 
 URL=$DOMAIN.$APP_NAME.hack.bg
 echo "Deployed to $URL"
