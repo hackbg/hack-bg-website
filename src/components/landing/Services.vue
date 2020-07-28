@@ -15,31 +15,44 @@
         </div>
       </div>
       <div class="hack-slider-section hack-slide-first">
-        <div class="panel-last-child" data-index="0">
+        <div class="panel-last-child">
           <div
             class="fadeIn hack-slides container"
             style="visibility: visible; animation-duration: 1s; animation-iteration-count: 1; animation-name: fadeIn;"
           >
             <div class="row hack-slide-tabs">
               <button
-                class="col-md-3 hack-slide-tab hack-slide1 hack-slide-tab-active"
-                data-index="1"
+                class="col-md-3 hack-slide-tab hack-slide1"
+                :class="{'hack-slide-tab-active': isActive1}"
+                @click="setActive(1)"
               >
                 Blockchain
                 <br />Development
                 <div class="hack-tab-underline1"></div>
               </button>
-              <button class="col-md-3 hack-slide-tab hack-slide2" data-index="2">
+              <button
+                class="col-md-3 hack-slide-tab hack-slide2"
+                :class="{'hack-slide-tab-active': isActive2}"
+                @click="setActive(2)"
+              >
                 Smart Contracts
                 <br />Development
                 <div class="hack-tab-underline2"></div>
               </button>
-              <button class="col-md-3 hack-slide-tab hack-slide3" data-index="3">
+              <button
+                class="col-md-3 hack-slide-tab hack-slide3"
+                :class="{'hack-slide-tab-active': isActive3}"
+                @click="setActive(3)"
+              >
                 Crowdsale
                 <br />Services
                 <div class="hack-tab-underline3"></div>
               </button>
-              <button class="col-md-3 hack-slide-tab hack-slide4" data-index="4">
+              <button
+                class="col-md-3 hack-slide-tab hack-slide4"
+                :class="{'hack-slide-tab-active': isActive4}"
+                @click="setActive(4)"
+              >
                 Blockchain
                 <br />Consulting
                 <div class="hack-tab-underline4"></div>
@@ -48,14 +61,18 @@
             <div class="row">
               <div class="col-lg-6 col-md-12">
                 <div class="hack-box-image">
-                  <!-- <img :src="hackSvg" /> -->
-                  <HackSvg />
+                  <HackSvg :setActive="setActive" 
+                  :isActive1="isActive1"
+                  :isActive2="isActive2"
+                  :isActive3="isActive3"
+                  :isActive4="isActive4"
+                  />
                 </div>
               </div>
               <div class="col-lg-6 col-md-12">
                 <div class="slider-container">
                   <div class="slider-wrapper">
-                    <div class="slider-slide slider-slide-1 active-slide">
+                    <div class="slider-slide slider-slide-1" :class="{'active-slide': isActive1}">
                       <h1>Private and Public Blockchain Development</h1>
                       <p>
                         Implement cryptography-based technologies to store immutable data. Public
@@ -67,7 +84,7 @@
                         href="/dlt-blockchain-development-services/blockchain-software-development/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-2">
+                    <div class="slider-slide slider-slide-2" :class="{'active-slide': isActive2}">
                       <h1>Smart Contracts Development and Audit</h1>
                       <p>
                         We develop and audit smart contracts which are cost-saving, verifiable,
@@ -79,7 +96,7 @@
                         href="<?php get_site_url() ?>/dlt-blockchain-development-services/smart-contracts-development/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-3">
+                    <div class="slider-slide slider-slide-3" :class="{'active-slide': isActive3}">
                       <h1>Crowdsale Services</h1>
                       <p>
                         We offer our blockchain and smart contract development expertise building
@@ -91,7 +108,7 @@
                         href="<?php get_site_url() ?>/dlt-blockchain-development-services/ico-initial-coin-offering/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-4">
+                    <div class="slider-slide slider-slide-4" :class="{'active-slide': isActive4}">
                       <h1>Consulting</h1>
                       <p>
                         Our consulting services are helping projects define their decentralized
@@ -123,16 +140,34 @@
 </template>
 
 <script>
-// import hackSvg from "./../../assets/hack.svg";
-// export default {
-//   data() {
-//     return { hackSvg };
-//   },
-// };
-
 import HackSvg from "./HackSvg";
 export default {
+  data() {
+    return {
+      activeSlide: 1,
+    };
+  },
   components: { HackSvg },
+  methods: {
+    setActive: function (num) {
+      this.activeSlide = num;
+    },
+  },
+  computed: {
+    isActive1: function () {
+      return this.activeSlide === 1;
+    },
+    isActive2: function () {
+      return this.activeSlide === 2;
+    },
+    isActive3: function () {
+      return this.activeSlide === 3;
+    },
+    isActive4: function () {
+      return this.activeSlide === 4;
+    },
+  },
 };
 </script>
+
 
