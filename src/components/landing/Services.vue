@@ -93,7 +93,7 @@
                       </p>
                       <a
                         class="btn btn-md btn-hack-learn"
-                        href="<?php get_site_url() ?>/dlt-blockchain-development-services/smart-contracts-development/"
+                        href="/dlt-blockchain-development-services/smart-contracts-development/"
                       >Learn more ...</a>
                     </div>
                     <div class="slider-slide slider-slide-3" :class="{'active-slide': isActive3}">
@@ -105,7 +105,7 @@
                       </p>
                       <a
                         class="btn btn-md btn-hack-learn"
-                        href="<?php get_site_url() ?>/dlt-blockchain-development-services/ico-initial-coin-offering/"
+                        href="/dlt-blockchain-development-services/ico-initial-coin-offering/"
                       >Learn more ...</a>
                     </div>
                     <div class="slider-slide slider-slide-4" :class="{'active-slide': isActive4}">
@@ -118,7 +118,7 @@
                       </p>
                       <a
                         class="btn btn-md btn-hack-learn"
-                        href="<?php get_site_url() ?>/dlt-blockchain-development-services/blockchain-consulting/"
+                        href="/dlt-blockchain-development-services/blockchain-consulting/"
                       >Learn more ...</a>
                     </div>
                   </div>
