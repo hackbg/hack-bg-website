@@ -13,19 +13,7 @@
         </div>
       </div>
       <div class="container">
-        <div id="carouselControls" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li @click="setActive(1)" :class="{active: isActive1}"></li>
-            <li @click="setActive(2)" :class="{active: isActive2}"></li>
-            <li @click="setActive(3)" :class="{active: isActive3}"></li>
-            <li @click="setActive(4)" :class="{active: isActive4}"></li>
-            <li @click="setActive(5)" :class="{active: isActive5}"></li>
-            <li @click="setActive(6)" :class="{active: isActive6}"></li>
-            <li @click="setActive(7)" :class="{active: isActive7}"></li>
-            <li @click="setActive(8)" :class="{active: isActive8}"></li>
-            <li @click="setActive(9)" :class="{active: isActive9}"></li>
-            <li @click="setActive(10)" :class="{active: isActive10}"></li>
-          </ol>
+        <div id="carouselControls" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item" :class="{active: isActive1}">
               <div class="row">
@@ -418,9 +406,21 @@
                 </div>
               </div>
             </div>
+            <ol class="carousel-indicators">
+              <li @click="setActive(1)" :class="{active: isActive1}"></li>
+              <li @click="setActive(2)" :class="{active: isActive2}"></li>
+              <li @click="setActive(3)" :class="{active: isActive3}"></li>
+              <li @click="setActive(4)" :class="{active: isActive4}"></li>
+              <li @click="setActive(5)" :class="{active: isActive5}"></li>
+              <li @click="setActive(6)" :class="{active: isActive6}"></li>
+              <li @click="setActive(7)" :class="{active: isActive7}"></li>
+              <li @click="setActive(8)" :class="{active: isActive8}"></li>
+              <li @click="setActive(9)" :class="{active: isActive9}"></li>
+              <li @click="setActive(10)" :class="{active: isActive10}"></li>
+            </ol>
           </div>
         </div>
-      <!-- TO DO: sliding animation -->
+        <!-- TO DO: sliding animation -->
         <div class="row">
           <div class="col-sm-12 text-center">
             <b-button class="btn-hack-carousel" variant="primary" @click="setPrev">

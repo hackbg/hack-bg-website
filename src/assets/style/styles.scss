@@ -947,11 +947,19 @@ a.btn {
 
 .hack-project-technologies {
   color: #8898aa;
-  position: absolute;
-  right: 15%;
-  bottom: 5%;
+  // position: absolute;
+  // right: 15%;
+  // bottom: 5%;
   i {
     margin: 0 3px;
+  }
+}
+
+@media (min-width: 991px) {
+  .hack-project-technologies {
+    position: absolute;
+    right: 15%;
+    bottom: 5%;
   }
 }
 
@@ -960,6 +968,12 @@ a.btn {
 
   &.active {
     background-color: #9013FE;
+  }
+}
+
+@media (max-width: 990px) {
+  .carousel-indicators {
+    display: none;
   }
 }
 
@@ -2936,10 +2950,8 @@ textarea#comment {
           border-radius: 50%;
         }
 
-        .hack-slide-tab-active {
-          background-color: #f9f9f9;
-          border: 2px solid #814b87;
-          opacity: 1;
+        .active {
+          background-color: #814b87;
         }
       }
     }
