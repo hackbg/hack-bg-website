@@ -16,42 +16,42 @@
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/hosho.png"
+              src="@/assets/images/logos/hosho.png"
               alt="hosho"
             />
           </div>
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/aeternity.png"
+              src="@/assets/images/logos/aeternity.png"
               alt="aeternity"
             />
           </div>
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/jarvis.png"
+              src="@/assets/images/logos/jarvis.png"
               alt="jarvis"
             />
           </div>
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/weidex.png"
+              src="@/assets/images/logos/weidex.png"
               alt="weidex"
             />
           </div>
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/homeport.png"
+              src="@/assets/images/logos/homeport.png"
               alt="homeport"
             />
           </div>
           <div class="col-sm-3 col-md-3 text-center mt-3">
             <img
               class="logo-partner-section"
-              src="<?php echo get_template_directory_uri() ?>/assets/images/logos/utu.png"
+              src="@/assets/images/logos/utu.png"
               alt="utu"
             />
           </div>

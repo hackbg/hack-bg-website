@@ -1,5 +1,6 @@
 <template>
   <section id="services">
+    <div class="empty-space"></div>
     <article class="mt-5 mb-5">
       <div class="container">
         <div class="jumbotron jumbotron-fluid no-bg">
@@ -47,7 +48,8 @@
             <div class="row">
               <div class="col-lg-6 col-md-12">
                 <div class="hack-box-image">
-                  <img :src="hackSvg" />
+                  <!-- <img :src="hackSvg" /> -->
+                  <HackSvg />
                 </div>
               </div>
               <div class="col-lg-6 col-md-12">
@@ -121,10 +123,16 @@
 </template>
 
 <script>
-import hackSvg from "./../../assets/hack.svg";
+// import hackSvg from "./../../assets/hack.svg";
+// export default {
+//   data() {
+//     return { hackSvg };
+//   },
+// };
+
+import HackSvg from "./HackSvg";
 export default {
-  data() {
-    return { hackSvg };
-  }
+  components: { HackSvg },
 };
 </script>
+
