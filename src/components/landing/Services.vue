@@ -62,11 +62,12 @@
             <div class="row">
               <div class="col-lg-6 col-md-12">
                 <div class="hack-box-image">
-                  <HackSvg :setActive="setActive" 
-                  :isActive1="isActive1"
-                  :isActive2="isActive2"
-                  :isActive3="isActive3"
-                  :isActive4="isActive4"
+                  <HackSvg
+                    :setActive="setActive"
+                    :isActive1="isActive1"
+                    :isActive2="isActive2"
+                    :isActive3="isActive3"
+                    :isActive4="isActive4"
                   />
                 </div>
               </div>
@@ -125,10 +126,26 @@
                   </div>
 
                   <div class="hack-dots">
-                    <div class="hack-slider-dot" :class="{'active': isActive1}" @mouseover="setActive(1)"></div>
-                    <div class="hack-slider-dot" :class="{'active': isActive2}" @mouseover="setActive(2)"></div>
-                    <div class="hack-slider-dot" :class="{'active': isActive3}" @mouseover="setActive(3)"></div>
-                    <div class="hack-slider-dot" :class="{'active': isActive4}" @mouseover="setActive(4)"></div>
+                    <div
+                      class="hack-slider-dot"
+                      :class="{'active': isActive1}"
+                      @mouseover="setActive(1)"
+                    ></div>
+                    <div
+                      class="hack-slider-dot"
+                      :class="{'active': isActive2}"
+                      @mouseover="setActive(2)"
+                    ></div>
+                    <div
+                      class="hack-slider-dot"
+                      :class="{'active': isActive3}"
+                      @mouseover="setActive(3)"
+                    ></div>
+                    <div
+                      class="hack-slider-dot"
+                      :class="{'active': isActive4}"
+                      @mouseover="setActive(4)"
+                    ></div>
                   </div>
                 </div>
               </div>
