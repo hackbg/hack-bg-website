@@ -33,10 +33,10 @@
 <script>
 export default {
    mounted() {
-    window.addEventListener('scroll', () => this.handleScroll);
+    window.addEventListener('scroll', () => this.handleScroll());
   },
   destroyed() {
-    window.removeEventListener('scroll', () => this.handleScroll);
+    window.removeEventListener('scroll', () => this.handleScroll());
   },
   methods: {
     handleScroll(event) {
