@@ -3,3 +3,4 @@ node_modules
 dist
 src/.temp
 scripts/deploy-key
+package-lock.json
