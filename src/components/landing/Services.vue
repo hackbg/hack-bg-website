@@ -14,7 +14,6 @@
           </div>
         </div>
       </div>
-      <!-- TO DO: tab underline -->
       <div class="hack-slider-section hack-slide-first">
         <div class="panel-last-child">
           <div
@@ -223,9 +222,19 @@ export default {
 .active-underline {
   transition: all 0.5s ease-in-out;
   animation: growanimation 10s;
+  -webkit-animation: growanimation 10s;
 }
 
 @keyframes growanimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes growanimation {
   from {
     width: 0;
   }

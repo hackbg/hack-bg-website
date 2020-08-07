@@ -15,7 +15,7 @@
       <div class="container">
         <div id="carouselControls" class="carousel slide">
           <div class="carousel-inner">
-            <div class="carousel-item" :class="{active: isActive1}">
+            <div class="carousel-item" :class="{active: activeSlide === 1,'active-slide-in': activeSlide === 1}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive2}">
+            <div class="carousel-item" :class="{active: activeSlide === 2,'active-slide-in': activeSlide === 2}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -101,7 +101,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive3}">
+            <div class="carousel-item" :class="{active: activeSlide === 3,'active-slide-in': activeSlide === 3}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -140,7 +140,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive4}">
+            <div class="carousel-item" :class="{active: activeSlide === 4,'active-slide-in': activeSlide === 4}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -183,7 +183,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive5}">
+            <div class="carousel-item" :class="{active: activeSlide === 5,'active-slide-in': activeSlide === 5}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -220,7 +220,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive6}">
+            <div class="carousel-item" :class="{active: activeSlide === 6,'active-slide-in': activeSlide === 6}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -260,7 +260,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive7}">
+            <div class="carousel-item" :class="{active: activeSlide === 7,'active-slide-in': activeSlide === 7}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -296,7 +296,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive8}">
+            <div class="carousel-item" :class="{active: activeSlide === 8,'active-slide-in': activeSlide === 8}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -336,7 +336,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive9}">
+            <div class="carousel-item" :class="{active: activeSlide === 9,'active-slide-in': activeSlide === 9}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -371,7 +371,7 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: isActive10}">
+            <div class="carousel-item" :class="{active: activeSlide === 10,'active-slide-in': activeSlide === 10}">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -407,20 +407,19 @@
               </div>
             </div>
             <ol class="carousel-indicators">
-              <li @click="setActive(1)" :class="{active: isActive1}"></li>
-              <li @click="setActive(2)" :class="{active: isActive2}"></li>
-              <li @click="setActive(3)" :class="{active: isActive3}"></li>
-              <li @click="setActive(4)" :class="{active: isActive4}"></li>
-              <li @click="setActive(5)" :class="{active: isActive5}"></li>
-              <li @click="setActive(6)" :class="{active: isActive6}"></li>
-              <li @click="setActive(7)" :class="{active: isActive7}"></li>
-              <li @click="setActive(8)" :class="{active: isActive8}"></li>
-              <li @click="setActive(9)" :class="{active: isActive9}"></li>
-              <li @click="setActive(10)" :class="{active: isActive10}"></li>
+              <li @click="setActive(1)" :class="{active: activeSlide === 1}"></li>
+              <li @click="setActive(2)" :class="{active: activeSlide === 2}"></li>
+              <li @click="setActive(3)" :class="{active: activeSlide === 3}"></li>
+              <li @click="setActive(4)" :class="{active: activeSlide === 4}"></li>
+              <li @click="setActive(5)" :class="{active: activeSlide === 5}"></li>
+              <li @click="setActive(6)" :class="{active: activeSlide === 6}"></li>
+              <li @click="setActive(7)" :class="{active: activeSlide === 7}"></li>
+              <li @click="setActive(8)" :class="{active: activeSlide === 8}"></li>
+              <li @click="setActive(9)" :class="{active: activeSlide === 9}"></li>
+              <li @click="setActive(10)" :class="{active: activeSlide === 10}"></li>
             </ol>
           </div>
         </div>
-        <!-- TO DO: sliding animation -->
         <div class="row">
           <div class="col-sm-12 text-center">
             <b-button class="btn-hack-carousel" variant="primary" @click="setPrev">
@@ -437,14 +436,17 @@
 </template>
 
 <script>
+let interval;
 export default {
   data() {
     return {
       activeSlide: 1,
+      prevSlide: 1,
     };
   },
   methods: {
     setActive: function (num) {
+      this.prevSlide = this.activeSlide;
       this.activeSlide = num;
     },
     setPrev: function () {
@@ -462,37 +464,46 @@ export default {
       }
     },
   },
-  computed: {
-    isActive1: function () {
-      return this.activeSlide === 1;
-    },
-    isActive2: function () {
-      return this.activeSlide === 2;
-    },
-    isActive3: function () {
-      return this.activeSlide === 3;
-    },
-    isActive4: function () {
-      return this.activeSlide === 4;
-    },
-    isActive5: function () {
-      return this.activeSlide === 5;
-    },
-    isActive6: function () {
-      return this.activeSlide === 6;
-    },
-    isActive7: function () {
-      return this.activeSlide === 7;
-    },
-    isActive8: function () {
-      return this.activeSlide === 8;
-    },
-    isActive9: function () {
-      return this.activeSlide === 9;
-    },
-    isActive10: function () {
-      return this.activeSlide === 10;
+  watch: {
+    activeSlide: {
+      immediate: true,
+      handler(newSlide, oldSlide) {
+        clearInterval(interval);
+        interval = setInterval(() => {
+          this.setActive(newSlide + 1);
+          if (this.activeSlide > 10) {
+            this.setActive(1);
+          }
+        }, 5000);
+      },
     },
   },
 };
 </script>
+
+<style scoped>
+.active-slide-in {
+  animation: slide-in 2s forwards;
+  animation-delay: 2s;
+  -webkit-animation: slide-in 2s forwards;
+  overflow: hidden;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+</style>
