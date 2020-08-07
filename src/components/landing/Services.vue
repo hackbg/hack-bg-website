@@ -159,6 +159,7 @@
 
 <script>
 import HackSvg from "./HackSvg";
+let interval;
 export default {
   data() {
     return {
@@ -183,6 +184,20 @@ export default {
     },
     isActive4: function () {
       return this.activeSlide === 4;
+    },
+  },
+  watch: {
+    activeSlide: {
+      immediate: true,
+      handler(newSlide, oldSlide) {
+        clearInterval(interval);
+        interval = setInterval(() => {
+          this.setActive(newSlide + 1);
+          if (this.activeSlide > 4) {
+            this.setActive(1);
+          }
+        }, 10000);
+      },
     },
   },
 };
