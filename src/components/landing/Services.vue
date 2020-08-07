@@ -29,7 +29,11 @@
               >
                 Blockchain
                 <br />Development
-                <div class="hack-tab-underline1"></div>
+                <div
+                  id="underline1"
+                  class="hack-tab-underline1"
+                  :class="{'active-underline': isActive1}"
+                ></div>
               </button>
               <button
                 class="col-md-3 hack-slide-tab hack-slide2"
@@ -38,7 +42,11 @@
               >
                 Smart Contracts
                 <br />Development
-                <div class="hack-tab-underline2"></div>
+                <div
+                  id="underline2"
+                  class="hack-tab-underline2"
+                  :class="{'active-underline': isActive2}"
+                ></div>
               </button>
               <button
                 class="col-md-3 hack-slide-tab hack-slide3"
@@ -47,7 +55,11 @@
               >
                 Crowdsale
                 <br />Services
-                <div class="hack-tab-underline3"></div>
+                <div
+                  id="underline3"
+                  class="hack-tab-underline3"
+                  :class="{'active-underline': isActive3}"
+                ></div>
               </button>
               <button
                 class="col-md-3 hack-slide-tab hack-slide4"
@@ -56,7 +68,11 @@
               >
                 Blockchain
                 <br />Consulting
-                <div class="hack-tab-underline4"></div>
+                <div
+                  id="underline4"
+                  class="hack-tab-underline4"
+                  :class="{'active-underline': isActive4}"
+                ></div>
               </button>
             </div>
             <div class="row">
@@ -203,4 +219,18 @@ export default {
 };
 </script>
 
+<style scoped>
+.active-underline {
+  transition: all 0.5s ease-in-out;
+  animation: growanimation 10s;
+}
 
+@keyframes growanimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+</style>
