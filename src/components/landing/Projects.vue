@@ -15,7 +15,10 @@
       <div class="container">
         <div id="carouselControls" class="carousel slide">
           <div class="carousel-inner">
-            <div class="carousel-item" :class="{active: activeSlide === 1,'active-slide-in': activeSlide === 1}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 1,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -61,7 +64,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 2,'active-slide-in': activeSlide === 2}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 2,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -101,7 +107,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 3,'active-slide-in': activeSlide === 3}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 3,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -140,7 +149,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 4,'active-slide-in': activeSlide === 4}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 4,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -183,7 +195,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 5,'active-slide-in': activeSlide === 5}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 5,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -220,7 +235,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 6,'active-slide-in': activeSlide === 6}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 6,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -260,7 +278,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 7,'active-slide-in': activeSlide === 7}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 7,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -296,7 +317,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 8,'active-slide-in': activeSlide === 8}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 8,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -336,7 +360,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 9,'active-slide-in': activeSlide === 9}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 9,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -371,7 +398,10 @@
                 </div>
               </div>
             </div>
-            <div class="carousel-item" :class="{active: activeSlide === 10,'active-slide-in': activeSlide === 10}">
+            <div
+              class="carousel-item"
+              :class="{active: activeSlide === 10,'slide-right': direction==='right', 'slide-left': direction==='left'}"
+            >
               <div class="row">
                 <div class="col-sm-12">
                   <div class="text-center hack-project-carousel-container">
@@ -450,6 +480,7 @@ export default {
       this.activeSlide = num;
     },
     setPrev: function () {
+      this.prevSlide = this.activeSlide;
       if (this.activeSlide === 1) {
         this.activeSlide = 10;
       } else {
@@ -457,11 +488,19 @@ export default {
       }
     },
     setNext: function () {
+      this.prevSlide = this.activeSlide;
       if (this.activeSlide === 10) {
         this.activeSlide = 1;
       } else {
         this.activeSlide = this.activeSlide + 1;
       }
+    },
+  },
+  computed: {
+    direction: function () {
+      if (this.prevSlide > this.activeSlide) {
+        return "right";
+      } else return "left";
     },
   },
   watch: {
@@ -470,9 +509,10 @@ export default {
       handler(newSlide, oldSlide) {
         clearInterval(interval);
         interval = setInterval(() => {
-          this.setActive(newSlide + 1);
-          if (this.activeSlide > 10) {
+          if (newSlide + 1 > 10) {
             this.setActive(1);
+          } else {
+            this.setActive(newSlide + 1);
           }
         }, 5000);
       },
@@ -482,14 +522,13 @@ export default {
 </script>
 
 <style scoped>
-.active-slide-in {
-  animation: slide-in 2s forwards;
-  animation-delay: 2s;
-  -webkit-animation: slide-in 2s forwards;
+.slide-left {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in-left 0.5s forwards;
   overflow: hidden;
 }
 
-@keyframes slide-in {
+@keyframes slide-in-left {
   from {
     transform: translateX(100%);
   }
@@ -498,9 +537,33 @@ export default {
   }
 }
 
-@-webkit-keyframes slide-in {
+@-webkit-keyframes slide-in-left {
   from {
     transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide-right {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in-right 0.5s forwards;
+  overflow: hidden;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  from {
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0%);
