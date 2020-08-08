@@ -468,6 +468,7 @@ export default {
     return {
       activeSlide: 1,
       prevSlide: 1,
+      slides: new Array(10),
     };
   },
   methods: {
