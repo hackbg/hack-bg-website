@@ -497,10 +497,8 @@ export default {
     },
   },
   computed: {
-    direction: function () {
-      if (this.prevSlide > this.activeSlide) {
-        return "right";
-      } else return "left";
+    direction() {
+      return this.prevSlide > this.activeSlide ? 'right' : 'left';
     },
   },
   watch: {
