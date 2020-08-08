@@ -437,16 +437,12 @@
               </div>
             </div>
             <ol class="carousel-indicators">
-              <li @click="setActive(1)" :class="{active: activeSlide === 1}"></li>
-              <li @click="setActive(2)" :class="{active: activeSlide === 2}"></li>
-              <li @click="setActive(3)" :class="{active: activeSlide === 3}"></li>
-              <li @click="setActive(4)" :class="{active: activeSlide === 4}"></li>
-              <li @click="setActive(5)" :class="{active: activeSlide === 5}"></li>
-              <li @click="setActive(6)" :class="{active: activeSlide === 6}"></li>
-              <li @click="setActive(7)" :class="{active: activeSlide === 7}"></li>
-              <li @click="setActive(8)" :class="{active: activeSlide === 8}"></li>
-              <li @click="setActive(9)" :class="{active: activeSlide === 9}"></li>
-              <li @click="setActive(10)" :class="{active: activeSlide === 10}"></li>
+              <li 
+                v-for="(item, index) in slides"
+                :key="`slide-${index}`"
+                @click="setActive(index)"
+                :class="{ active: activeSlide === index }"
+              ></li>
             </ol>
           </div>
         </div>
