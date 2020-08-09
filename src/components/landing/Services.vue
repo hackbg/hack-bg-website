@@ -22,144 +22,48 @@
           >
             <div class="row hack-slide-tabs">
               <button
-                class="col-md-3 hack-slide-tab hack-slide1"
-                :class="{'hack-slide-tab-active': isActive1}"
-                @click="setActive(1)"
+                v-for="(service, index) in servicesData"
+                :key="`button-${index}`"
+                class="col-md-3 hack-slide-tab hack-slide"
+                :class="{'hack-slide-tab-active': activeSlide===index}"
+                @click="setActive(index)"
               >
-                Blockchain
-                <br />Development
+                {{service.btnTitle}}
                 <div
                   id="underline1"
-                  class="hack-tab-underline1"
-                  :class="{'active-underline': isActive1}"
-                ></div>
-              </button>
-              <button
-                class="col-md-3 hack-slide-tab hack-slide2"
-                :class="{'hack-slide-tab-active': isActive2}"
-                @click="setActive(2)"
-              >
-                Smart Contracts
-                <br />Development
-                <div
-                  id="underline2"
-                  class="hack-tab-underline2"
-                  :class="{'active-underline': isActive2}"
-                ></div>
-              </button>
-              <button
-                class="col-md-3 hack-slide-tab hack-slide3"
-                :class="{'hack-slide-tab-active': isActive3}"
-                @click="setActive(3)"
-              >
-                Crowdsale
-                <br />Services
-                <div
-                  id="underline3"
-                  class="hack-tab-underline3"
-                  :class="{'active-underline': isActive3}"
-                ></div>
-              </button>
-              <button
-                class="col-md-3 hack-slide-tab hack-slide4"
-                :class="{'hack-slide-tab-active': isActive4}"
-                @click="setActive(4)"
-              >
-                Blockchain
-                <br />Consulting
-                <div
-                  id="underline4"
-                  class="hack-tab-underline4"
-                  :class="{'active-underline': isActive4}"
+                  class="hack-tab-underline"
+                  :class="{'active-underline': activeSlide===index}"
                 ></div>
               </button>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-12">
                 <div class="hack-box-image">
-                  <HackSvg
-                    :setActive="setActive"
-                    :isActive1="isActive1"
-                    :isActive2="isActive2"
-                    :isActive3="isActive3"
-                    :isActive4="isActive4"
-                  />
+                  <HackSvg :setActive="setActive" :activeSlide="activeSlide" />
                 </div>
               </div>
               <div class="col-lg-6 col-md-12">
                 <div class="slider-container">
                   <div class="slider-wrapper">
-                    <div class="slider-slide" :class="{'active-slide': isActive1}">
-                      <h1>Private and Public Blockchain Development</h1>
-                      <p>
-                        Implement cryptography-based technologies to store immutable data. Public
-                        shared ledgers like Ethereum and private blockchain networks according to
-                        your business needs.
-                      </p>
-                      <a
-                        class="btn btn-md btn-hack-learn"
-                        href="/dlt-blockchain-development-services/blockchain-software-development/"
-                      >Learn more ...</a>
-                    </div>
-                    <div class="slider-slide" :class="{'active-slide': isActive2}">
-                      <h1>Smart Contracts Development and Audit</h1>
-                      <p>
-                        We develop and audit smart contracts which are cost-saving, verifiable,
-                        self-executable and auto-enforcing. If well implemented they can generate
-                        savings due to speed of execution and reducing middlemen cost.
-                      </p>
-                      <a
-                        class="btn btn-md btn-hack-learn"
-                        href="/dlt-blockchain-development-services/smart-contracts-development/"
-                      >Learn more ...</a>
-                    </div>
-                    <div class="slider-slide" :class="{'active-slide': isActive3}">
-                      <h1>Crowdsale Services</h1>
-                      <p>
-                        We offer our blockchain and smart contract development expertise building
-                        the technical part of your ICOs/STOs to help you fundraise your business
-                        endeavor.
-                      </p>
-                      <a
-                        class="btn btn-md btn-hack-learn"
-                        href="/dlt-blockchain-development-services/ico-initial-coin-offering/"
-                      >Learn more ...</a>
-                    </div>
-                    <div class="slider-slide" :class="{'active-slide': isActive4}">
-                      <h1>Consulting</h1>
-                      <p>
-                        Our consulting services are helping projects define their decentralized
-                        application or blockchain architecture, smart contracts utilization,
-                        crystallize the use-case idea they have, and advise on the token economy
-                        (tokenomy) behind their product.
-                      </p>
-                      <a
-                        class="btn btn-md btn-hack-learn"
-                        href="/dlt-blockchain-development-services/blockchain-consulting/"
-                      >Learn more ...</a>
+                    <div
+                      class="slider-slide"
+                      v-for="(service,index) in servicesData"
+                      :key="`service-${index}`"
+                      :class="{'active-slide': activeSlide === index}"
+                    >
+                      <h1>{{service.title}}</h1>
+                      <p>{{service.description}}</p>
+                      <a class="btn btn-md btn-hack-learn" :href="service.linkUrl">Learn more ...</a>
                     </div>
                   </div>
 
                   <div class="hack-dots">
                     <div
+                      v-for="(slide, index) in slides"
+                      :key="`slide-${index}`"
                       class="hack-slider-dot"
-                      :class="{'active': isActive1}"
-                      @mouseover="setActive(1)"
-                    ></div>
-                    <div
-                      class="hack-slider-dot"
-                      :class="{'active': isActive2}"
-                      @mouseover="setActive(2)"
-                    ></div>
-                    <div
-                      class="hack-slider-dot"
-                      :class="{'active': isActive3}"
-                      @mouseover="setActive(3)"
-                    ></div>
-                    <div
-                      class="hack-slider-dot"
-                      :class="{'active': isActive4}"
-                      @mouseover="setActive(4)"
+                      @mouseover="setActive(index)"
+                      :class="{ active: activeSlide === index }"
                     ></div>
                   </div>
                 </div>
@@ -174,11 +78,14 @@
 
 <script>
 import HackSvg from "./HackSvg";
+import { services } from "../../data/services.json";
 let interval;
 export default {
   data() {
     return {
-      activeSlide: 1,
+      activeSlide: 0,
+      servicesData: services,
+      slides: new Array(services.length),
     };
   },
   components: { HackSvg },
@@ -187,30 +94,17 @@ export default {
       this.activeSlide = num;
     },
   },
-  computed: {
-    isActive1: function () {
-      return this.activeSlide === 1;
-    },
-    isActive2: function () {
-      return this.activeSlide === 2;
-    },
-    isActive3: function () {
-      return this.activeSlide === 3;
-    },
-    isActive4: function () {
-      return this.activeSlide === 4;
-    },
-  },
   watch: {
     activeSlide: {
       immediate: true,
       handler(newSlide, oldSlide) {
         clearInterval(interval);
         interval = setInterval(() => {
-          this.setActive(newSlide + 1);
-          if (this.activeSlide > 4) {
-            this.setActive(1);
-          }
+          this.setActive(
+            this.activeSlide === this.slides.length - 1
+              ? 0
+              : this.activeSlide + 1
+          );
         }, 10000);
       },
     },

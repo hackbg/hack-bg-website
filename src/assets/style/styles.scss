@@ -2804,13 +2804,13 @@ textarea#comment {
         color: #59575a;
       }
 
-      .hack-slide1 {
+      .hack-slide {
         position: relative;
 
         &.hack-slide-tab-active {
           color: #9013FE;
 
-          .hack-tab-underline1 {
+          .hack-tab-underline {
             content: '';
             height: 2px;
             background-color: #9013FE;
@@ -2818,48 +2818,6 @@ textarea#comment {
             bottom: 0;
             left: 0;
           }
-        }
-      }
-
-      .hack-slide2.hack-slide-tab-active {
-        color: #9013FE;
-
-        .hack-tab-underline2 {
-          content: '';
-          height: 2px;
-          background-color: #9013FE;
-          width: 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
-      }
-
-      .hack-slide3.hack-slide-tab-active {
-        color: #9013FE;
-
-        .hack-tab-underline3 {
-          content: '';
-          height: 2px;
-          background-color: #9013FE;
-          width: 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
-      }
-
-      .hack-slide4.hack-slide-tab-active {
-        color: #9013FE;
-
-        .hack-tab-underline4 {
-          content: '';
-          height: 2px;
-          background-color: #9013FE;
-          width: 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
         }
       }
     }

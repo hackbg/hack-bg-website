@@ -2,7 +2,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 560" width="100%" height="100%">
     <g data-name="Layer 2">
       <g>
-        <g class="cls-1" :class="{'cls-active': isActive4}" @mouseover="setActive(4)">
+        <g class="cls-1" :class="{'cls-active': activeSlide===3}" @mouseover="setActive(3)">
           <polygon
             class="cls-2"
             points="48.6 421.38 273.44 335.9 498.28 421.38 273.44 510.38 48.6 421.38"
@@ -20,7 +20,7 @@
             points="498.28 390.88 498.28 421.38 273.44 510.38 273.44 479.88 498.28 390.88"
           />
         </g>
-        <g class="cls-1" :class="{'cls-active': isActive3}" @mouseover="setActive(3)">
+        <g class="cls-1" :class="{'cls-active': activeSlide===2}" @mouseover="setActive(2)">
           <polygon
             class="cls-5"
             points="48.6 307.37 273.44 221.88 498.28 307.37 273.44 396.37 48.6 307.37"
@@ -34,7 +34,7 @@
             points="498.28 307.37 498.28 337.87 273.44 426.87 273.44 396.37 498.28 307.37"
           />
         </g>
-        <g class="cls-1" :class="{'cls-active': isActive2}" @mouseover="setActive(2)">
+        <g class="cls-1" :class="{'cls-active': activeSlide===1}" @mouseover="setActive(1)">
           <polygon
             class="cls-8"
             points="48.6 223.85 273.44 138.36 498.28 223.85 273.44 312.85 48.6 223.85"
@@ -48,7 +48,7 @@
             points="498.28 223.85 498.28 254.35 273.44 343.35 273.44 312.85 498.28 223.85"
           />
         </g>
-        <g class="cls-1" :class="{'cls-active': isActive1}" @mouseover="setActive(1)">
+        <g class="cls-1" :class="{'cls-active': activeSlide===0}" @mouseover="setActive(0)">
           <polygon
             class="cls-2"
             points="48.6 170.83 273.44 85.35 498.28 170.83 273.44 259.83 48.6 170.83"
@@ -93,10 +93,7 @@
 export default {
   props: {
     setActive: Function,
-    isActive1: Boolean,
-    isActive2: Boolean,
-    isActive3: Boolean,
-    isActive4: Boolean,
+    activeSlide: Number,
   },
 };
 </script>
@@ -106,9 +103,9 @@ export default {
   opacity: 0.2;
 }
 
-/* .cls-1:hover {
+.cls-1:hover {
   opacity: 1;
-} */
+}
 
 .cls-active {
   opacity: 1;
