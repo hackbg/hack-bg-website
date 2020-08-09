@@ -89,7 +89,7 @@
               <div class="col-lg-6 col-md-12">
                 <div class="slider-container">
                   <div class="slider-wrapper">
-                    <div class="slider-slide slider-slide-1" :class="{'active-slide': isActive1}">
+                    <div class="slider-slide" :class="{'active-slide': isActive1}">
                       <h1>Private and Public Blockchain Development</h1>
                       <p>
                         Implement cryptography-based technologies to store immutable data. Public
@@ -101,7 +101,7 @@
                         href="/dlt-blockchain-development-services/blockchain-software-development/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-2" :class="{'active-slide': isActive2}">
+                    <div class="slider-slide" :class="{'active-slide': isActive2}">
                       <h1>Smart Contracts Development and Audit</h1>
                       <p>
                         We develop and audit smart contracts which are cost-saving, verifiable,
@@ -113,7 +113,7 @@
                         href="/dlt-blockchain-development-services/smart-contracts-development/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-3" :class="{'active-slide': isActive3}">
+                    <div class="slider-slide" :class="{'active-slide': isActive3}">
                       <h1>Crowdsale Services</h1>
                       <p>
                         We offer our blockchain and smart contract development expertise building
@@ -125,7 +125,7 @@
                         href="/dlt-blockchain-development-services/ico-initial-coin-offering/"
                       >Learn more ...</a>
                     </div>
-                    <div class="slider-slide slider-slide-4" :class="{'active-slide': isActive4}">
+                    <div class="slider-slide" :class="{'active-slide': isActive4}">
                       <h1>Consulting</h1>
                       <p>
                         Our consulting services are helping projects define their decentralized
