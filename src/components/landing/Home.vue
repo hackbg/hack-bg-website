@@ -28,7 +28,6 @@
 }
 
 .hack-home-content {
-  /* position: absolute; */
   margin-top: 10%;
 }
 
