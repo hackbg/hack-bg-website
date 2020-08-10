@@ -34,8 +34,6 @@
 .hack-home-title {
   white-space: wrap;
   color: #9013fe;
-
-  /* text-shadow: -1px 0 #9013FE, 0 1px #9013FE, 1px 0 #9013FE, 0 -1px #9013FE; */
 }
 
 .hack-home-tilte-p {
