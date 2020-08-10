@@ -37,6 +37,5 @@
 }
 
 .hack-home-tilte-p {
-  /* text-shadow: -1px 0 #9013FE, 0 1px #9013FE, 1px 0 #9013FE, 0 -1px #9013FE; */
 }
 </style>
