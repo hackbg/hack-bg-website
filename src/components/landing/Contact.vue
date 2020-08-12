@@ -95,13 +95,10 @@ export default {
       };
     },
     submitForm(event) {
-      const url =
-        'https://script.google.com/macros/s/AKfycbw9QbJ_q_ujDTaEWTwImKcqJ0QI5Agw3x7-i7TScZ1QUS080EU/exec';
       const form = event.target.form;
       const formData = this.getFormData(form);
-
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
+      xhr.open('POST', process.env.GRIDSOME_CONTACT_FORM_URL);
       // xhr.withCredentials = true;
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = () => {
