@@ -72,14 +72,7 @@ export default {
     getFormData(form) {
       const elements = form.elements;
       const fields = Object.keys(elements)
-        .map(k => {
-          if (elements[k].name !== undefined) {
-            return elements[k].name;
-            // special case for Edge's html collection
-          } else if (elements[k].length > 0) {
-            return elements[k].item(0).name;
-          }
-        })
+        .map(k => elements[k].name || '')
         .filter((item, pos, self) => {
           return self.indexOf(item) == pos && item;
         });
