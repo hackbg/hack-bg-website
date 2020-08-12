@@ -99,7 +99,6 @@ export default {
       const formData = this.getFormData(form);
       const xhr = new XMLHttpRequest();
       xhr.open('POST', process.env.GRIDSOME_CONTACT_FORM_URL);
-      // xhr.withCredentials = true;
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = () => {
         xhr.readyState === 4 && xhr.status === 200 ? form.reset() : '';
