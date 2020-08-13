@@ -5,7 +5,9 @@
       <div class="container">
         <div class="jumbotron jumbotron-fluid no-bg">
           <div class="container">
-            <h2 class="display-4 text-center hack-section-heading">Get in touch with us</h2>
+            <h2 class="display-4 text-center hack-section-heading">
+              Get in touch with us
+            </h2>
             <p class="lead text-center hack-section-description">
               Have a project in mind?
               <br />Drop us a line and we’ll handle the rest.
@@ -17,13 +19,19 @@
       <div class="empty-space"></div>
 
       <div class="container">
-        <form class="contactForm" name="contactForm" id="contactForm" method="POST">
+        <form
+          class="gform contactForm"
+          name="contactForm"
+          id="contactForm"
+          method="POST"
+          @submit.prevent
+        >
           <div class="form-group">
             <input
               type="text"
               class="form-control"
-              id="contactName"
-              name="contactName"
+              id="name"
+              name="name"
               placeholder="Your name"
               required
             />
@@ -32,8 +40,8 @@
             <input
               type="text"
               class="form-control"
-              id="contactEmailOrPhone"
-              name="contactEmailOrPhone"
+              id="email"
+              name="email"
               placeholder="Enter your email or phone number"
               required
             />
@@ -41,14 +49,16 @@
           <div class="form-group">
             <textarea
               class="form-control"
-              id="contactMessage"
-              name="contactMessage"
+              id="message"
+              name="message"
               rows="10"
               placeholder="Tell us about your project"
             ></textarea>
           </div>
           <div class="form-group text-center">
-            <button class="btn btn-hack-purple" type="submit">Send</button>
+            <button class="btn btn-hack-purple" @click="submitForm">
+              Send
+            </button>
           </div>
         </form>
       </div>
@@ -57,7 +67,43 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    getFormData(form) {
+      const elements = form.elements;
+      const fields = Object.keys(elements)
+        .map(k => elements[k].name || '')
+        .filter((item, pos, self) => {
+          return self.indexOf(item) == pos && item;
+        });
+
+      return {
+        ...Object.values(fields).reduce((p, n) => {
+          p[n] = elements[n].value;
+          return p;
+        }, {}),
+        formDataNameOrder: JSON.stringify(fields),
+        formGoogleSheetName: form.dataset.sheet || 'responses',
+        formGoogleSendEmail: form.dataset.email || '',
+      };
+    },
+    submitForm(event) {
+      const form = event.target.form;
+      const formData = this.getFormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', process.env.GRIDSOME_CONTACT_FORM_URL);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onreadystatechange = () => {
+        xhr.readyState === 4 && xhr.status === 200 ? form.reset() : '';
+      };
+      // url encode form data for sending as post data
+      const encoded = Object.keys(formData)
+        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(formData[k]))
+        .join('&');
+      xhr.send(encoded);
+    },
+  },
+};
 </script>
 
 <style scoped>
