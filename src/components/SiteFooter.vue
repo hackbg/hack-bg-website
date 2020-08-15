@@ -52,37 +52,37 @@
           <ul>
             <li>
               <a
-                href="/dlt-blockchain-development-services/blockchain-software-development/"
+                href="/blockchain-software-development/"
                 title="Blockchain Development services"
               >Blockchain Development</a>
             </li>
             <li>
               <a
-                href="/dlt-blockchain-development-services/smart-contracts-development/"
+                href="/smart-contracts-development/"
                 title="Smart contract development services"
               >Smart Contracts</a>
             </li>
             <li>
               <a
-                href="/dlt-blockchain-development-services/smart-contract-audits/"
+                href="/smart-contract-audits/"
                 title="Blockchain Consulting and Advisory"
               >Smart contract Audits</a>
             </li>
             <li>
               <a
-                href="/dlt-blockchain-development-services/ico-initial-coin-offering/"
+                href="/ico-initial-coin-offering/"
                 title="Funrasing and crowsale"
               >Crowdsale</a>
             </li>
             <li>
               <a
-                href="/dlt-blockchain-development-services/blockchain-consulting/"
+                href="/blockchain-consulting/"
                 title="Blockchain Consulting and Advisory"
               >Consulting</a>
             </li>
             <li>
               <a
-                href="/dlt-blockchain-development-services/decentralized-applications-development/"
+                href="/decentralized-applications-development/"
                 title="Decentralized Applications Consulting and Development"
               >Decentralized Applications Development</a>
             </li>
