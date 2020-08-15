@@ -11,11 +11,11 @@
         <b-navbar-nav class="ml-auto align-middle">
           <b-nav-item to="/#home" exact-active-class="active" class="text-primary">Home</b-nav-item>
           <b-nav-item-dropdown text="Services" class="dropper" right>
-            <b-dropdown-item href="#">Blockchain Development</b-dropdown-item>
-            <b-dropdown-item href="#">Smart Contracts Development</b-dropdown-item>
-            <b-dropdown-item href="#">Smart Contract Audits</b-dropdown-item>
-            <b-dropdown-item href="#">Consulting</b-dropdown-item>
-            <b-dropdown-item href="#">Decentralized application (dApp) development</b-dropdown-item>
+            <b-dropdown-item href="/blockchain-software-development">Blockchain Development</b-dropdown-item>
+            <b-dropdown-item href="/smart-contracts-development">Smart Contracts Development</b-dropdown-item>
+            <b-dropdown-item href="/smart-contract-audits">Smart Contract Audits</b-dropdown-item>
+            <b-dropdown-item href="/blockchain-consulting">Consulting</b-dropdown-item>
+            <b-dropdown-item href="/decentralized-applications-development">Decentralized application (dApp) development</b-dropdown-item>
             <b-dropdown-divider></b-dropdown-divider>
             <b-dropdown-item href="/#services">All services</b-dropdown-item>
           </b-nav-item-dropdown>
