@@ -70,12 +70,18 @@ class WordPressSource {
       });
 
       pagesToCreate.forEach(page => {
-        console.log('Created page', page);
+        const parent = page.parent
+          ? this.staticPages.find(e => e.id === page.parent).slug
+          : '';
+        console.log(
+          'Created page',
+          `${parent ? `/${parent}` : ''}/${page.slug}`,
+        );
         createPage({
-          path: `/${page}`,
-          component: './src/templates/WordpressPage.vue',
+          path: `${parent ? `/${parent}` : ''}/${page.slug}`,
+          component: './src/templates/WordPressPage.vue',
           context: {
-            path: `/pages/${page}`,
+            path: `/pages/${page.slug}`,
           },
         });
       });
@@ -157,7 +163,8 @@ class WordPressSource {
 
       for (const post of data) {
         if (type === 'page') {
-          this.staticPages.push(post.slug);
+          const { id, parent, slug } = post;
+          this.staticPages.push({ id, parent, slug });
         }
 
         const fields = this.normalizeFields(post);
