@@ -8,3 +8,11 @@
     </b-button>
   </Layout>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Page Not Found',
+  },
+}
+</script>

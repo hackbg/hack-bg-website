@@ -24,7 +24,7 @@ module.exports = {
           WordpressPage: node => {
             return new URL(node.link).pathname
           },
-          post: '/:slug', //adds route for "post" post type (Optional)
+          post: '/blog/:slug', //adds route for "post" post type (Optional)
           WordpressCategory: '/:slug', //adds route for "post" post type (Optional)
           post_tag: '/tag/:slug', // adds route for "post_tag" post type (Optional)
         },

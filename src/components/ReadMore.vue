@@ -19,7 +19,10 @@ export default {
   },
   computed: {
     readingTime() {
-      const wordsCountApprox = this.post.content.split(' ').filter(e => e.length > 2).length
+      const wordsCountApprox =
+        this.post && this.post.content
+          ? this.post.content.split(' ').filter(e => e.length > 2).length
+          : 0
       const timeInMins = Math.round(wordsCountApprox / 200)
       return ` &asymp;${Math.max(1, timeInMins)}min`
     },

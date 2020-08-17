@@ -1,7 +1,7 @@
 <template>
   <b-row tag="article">
     <b-col
-      :data-first="post.title.charAt(0)"
+      :data-first="post.title ? post.title.charAt(0) : ''"
       md="3"
       class="meta-data py-md-5 text-center position-relative d-flex"
     >

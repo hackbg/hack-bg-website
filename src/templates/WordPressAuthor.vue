@@ -1,28 +1,36 @@
 <template>
   <Layout>
-    <header class="mb-4">
-      <b-img
-        v-if="$page.author.avatars.avatar96"
-        :src="$page.author.avatars.avatar96"
-        width="64"
-        rounded="circle"
-        fluid
-        thumbnail
-        center
-        class="mb-3 shadow"
-        alt=""
-      />
-      <h1 class="text-center text-uppercase h5 font-family-sans-serif">
-        Author: {{ $page.author.name }}
-      </h1>
-      <div
-        class="my-3 p-4 bg-light description"
-        v-if="$page.author.description"
-        v-html="$page.author.description"
-      />
-    </header>
-    <Post :post="node" v-for="{ node } in $page.author.belongsTo.edges" :key="node.id" />
-    <Pagination :info="$page.author.belongsTo.pageInfo" />
+    <b-row class="align-items-start">
+      <transition name="fade" appear>
+        <b-col tag="main" cols="12" lg="12" class="bg-white p-0 rounded shadow-lg">
+          <div class="overflow-hidden p-4 p-sm-5 ">
+            <header class="mb-4">
+              <b-img
+                v-if="$page.author.avatars.avatar96"
+                :src="$page.author.avatars.avatar96"
+                width="64"
+                rounded="circle"
+                fluid
+                thumbnail
+                center
+                class="mb-3 shadow"
+                alt=""
+              />
+              <h1 class="text-center text-uppercase h5 font-family-sans-serif">
+                Author: {{ $page.author.name }}
+              </h1>
+              <div
+                class="my-3 p-4 bg-light description"
+                v-if="$page.author.description"
+                v-html="$page.author.description"
+              />
+            </header>
+            <Post :post="node" v-for="{ node } in $page.author.belongsTo.edges" :key="node.id" />
+            <Pagination :info="$page.author.belongsTo.pageInfo" />
+          </div>
+        </b-col>
+      </transition>
+    </b-row>
   </Layout>
 </template>
 

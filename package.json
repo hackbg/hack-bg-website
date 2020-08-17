@@ -2,6 +2,7 @@
   "name": "hack-bg-website",
   "author": "Milen Radkov <milenradkov@me.com>",
   "private": true,
+  "version": "1.0.2",
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
@@ -13,14 +14,18 @@
     "bootstrap-vue": "^2.0.0-rc.27",
     "camelcase": "^5.3.1",
     "gridsome": "^0.6.7",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "p-map": "^3.0.0",
-    "vue": "^2.6.10"
+    "sharp": "^0.25.4",
+    "vue": "^2.6.10",
+    "vue-mailchimp-subscribe": "^1.1.0",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "style-resources-loader": "^1.2.1"
+    "style-resources-loader": "^1.2.1",
+    "vue-svg-loader": "^0.16.0"
   }
 }
