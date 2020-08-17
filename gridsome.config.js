@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 function addStyleResource(rule) {
   rule
@@ -6,7 +6,7 @@ function addStyleResource(rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [path.resolve(__dirname, './src/assets/style/*.scss')],
-    })
+    });
 }
 
 module.exports = {
@@ -16,16 +16,16 @@ module.exports = {
     {
       use: '~/src/plugins/wp-source/',
       options: {
-        baseUrl: 'https://hack.bg', // required - Replace me with your Wordpress URL
+        baseUrl: 'https://hack.bg', // required - Replace me with your WordPress URL
         typeName: 'WordPress', // GraphQL schema name (Optional)
         perPage: 100, // How many posts to load from server per request (Optional)
         concurrent: 10, // How many requests to run simultaneously (Optional)
         routes: {
-          WordpressPage: node => {
-            return new URL(node.link).pathname
+          WordPressPage: node => {
+            return new URL(node.link).pathname;
           },
           post: '/blog/:slug', //adds route for "post" post type (Optional)
-          WordpressCategory: '/:slug', //adds route for "post" post type (Optional)
+          WordPressCategory: '/:slug', //adds route for "post" post type (Optional)
           post_tag: '/tag/:slug', // adds route for "post_tag" post type (Optional)
         },
         createPages: {
@@ -37,10 +37,10 @@ module.exports = {
   ],
   chainWebpack(config) {
     // Load variables for all vue-files
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
 
     types.forEach(type => {
-      addStyleResource(config.module.rule('scss').oneOf(type))
-    })
+      addStyleResource(config.module.rule('scss').oneOf(type));
+    });
   },
-}
+};
