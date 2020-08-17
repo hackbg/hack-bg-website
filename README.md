@@ -13,10 +13,13 @@
 
 ```bash
 # install dependencies
-yarn
+npm install
 
 # start development server
-yarn dev
+npm run dev
+
+# build for production
+npm run build
 ```
 
 ## Contributing
