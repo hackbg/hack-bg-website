@@ -70,7 +70,7 @@ class WordPressSource {
         console.log('Created page', `${parent ? `/${parent}` : ''}/${page.slug}`)
         createPage({
           path: `${parent ? `/${parent}` : ''}/${page.slug}`,
-          component: './src/templates/WordpressPage.vue',
+          component: './src/templates/WordPressPage.vue',
           context: {
             path: `/pages/${page.slug}`,
           },
