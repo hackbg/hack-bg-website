@@ -66,12 +66,13 @@ class WordPressSource {
       })
 
       pagesToCreate.forEach(page => {
-        console.log('Created page', page)
+        const parent = page.parent ? this.staticPages.find(e => e.id === page.parent).slug : ''
+        console.log('Created page', `${parent ? `/${parent}` : ''}/${page.slug}`)
         createPage({
-          path: `/${page}`,
+          path: `${parent ? `/${parent}` : ''}/${page.slug}`,
           component: './src/templates/WordpressPage.vue',
           context: {
-            path: `/pages/${page}`,
+            path: `/pages/${page.slug}`,
           },
         })
       })
@@ -153,7 +154,8 @@ class WordPressSource {
 
       for (const post of data) {
         if (type === 'page') {
-          this.staticPages.push(post.slug)
+          const { id, parent, slug } = post
+          this.staticPages.push({ id, parent, slug })
         }
 
         const fields = this.normalizeFields(post)
@@ -306,8 +308,8 @@ function ensureArrayData(url, data) {
     } catch (err) {
       throw new Error(
         `Failed to fetch ${url}\n` +
-          `Expected JSON response but received:\n` +
-          `${data.trim().substring(0, 150)}...\n`,
+        `Expected JSON response but received:\n` +
+        `${data.trim().substring(0, 150)}...\n`,
       )
     }
   }
