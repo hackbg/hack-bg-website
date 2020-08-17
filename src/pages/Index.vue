@@ -19,7 +19,7 @@ import Projects from './../components/landing/Projects'
 
 export default {
   metaInfo: {
-    title: 'Hello, Hack!',
+    title: 'Blockchain Development & Consulting',
   },
   components: {
     Services,
