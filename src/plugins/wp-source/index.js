@@ -5,6 +5,7 @@ const { mapKeys, isPlainObject, trimEnd } = require('lodash')
 
 const TYPE_AUTHOR = 'author'
 const TYPE_ATTACHEMENT = 'attachment'
+const TYPE_COMMENT = 'comment'
 
 class WordPressSource {
   static defaultOptions() {
@@ -54,6 +55,7 @@ class WordPressSource {
       await this.getUsers(store)
       await this.getTaxonomies(store)
       await this.getPosts(store)
+      await this.getComments(store)
       this.createPages(api)
     })
   }
@@ -109,6 +111,22 @@ class WordPressSource {
         id: author.id,
         title: author.name,
         avatars,
+      })
+    }
+  }
+
+  async getComments(store) {
+    const { data } = await this.fetch('wp/v2/comments')
+
+    const comments = store.addContentType({
+      typeName: this.createTypeName(TYPE_COMMENT)
+    })
+
+    for (const comment of data) {
+      const fields = this.normalizeFields(comment)
+      comments.addNode({
+        ...fields,
+        id: comment.id
       })
     }
   }
