@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <b-container class="body-bg">
+  <div id="app" class="body-bg">
+    <b-container>
       <site-header />
       <router-view name="header"></router-view>
       <main>
@@ -20,7 +20,7 @@ export default {
   components: {
     FadeTransition,
     SiteFooter,
-    SiteHeader
-  }
+    SiteHeader,
+  },
 };
 </script>
