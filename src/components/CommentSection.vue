@@ -1,10 +1,21 @@
 <template>
-  <div id="comments" class="comments-area">
-    <h2 v-if="comments.length" class="comments-title">{{comments.length}} Comments</h2>
-    <ol class="comment-list">
-      <Comment v-for="{node} in comments" :key="node.id" :comment="node" />
-    </ol>
-  </div>
+  <b-row class="mt-2">
+    <b-col id="comments" class="comments-area">
+      <h2 v-if="postComments.length" class="comments-title">{{postComments.length}} Comments</h2>
+      <ol class="comment-list">
+        <Comment v-for="comment in comments" :key="comment.id" :comment="comment" :parent="true">
+          <ol class="children">
+            <Comment
+              v-for="childComment in comment.children"
+              :key="childComment.id"
+              :comment="childComment"
+              class="mb-4"
+            />
+          </ol>
+        </Comment>
+      </ol>
+    </b-col>
+  </b-row>
 </template>
 
 <static-query>
@@ -48,10 +59,22 @@ export default {
   },
   components: { Comment },
   computed: {
+    postComments() {
+      return this.$static.comments.edges
+        .filter((e) => this.post === e.node.post.toString())
+        .map((c) => c.node);
+    },
     comments() {
-      return this.$static.comments.edges.filter(
-        (e) => this.post === e.node.post.toString()
+      const parentComments = this.postComments.filter((c) => !c.parent);
+      const childrenComments = this.postComments.filter((c) => !!c.parent);
+      let comments = Array.from(parentComments);
+      comments.forEach(
+        (e) =>
+          (e.children = childrenComments.filter(
+            (c) => c.parent.toString() === e.id
+          ))
       );
+      return comments;
     },
   },
 };
