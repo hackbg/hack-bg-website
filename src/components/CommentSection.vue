@@ -4,7 +4,7 @@
       <h2 v-if="postComments.length" class="comments-title">{{postComments.length}} Comments</h2>
       <ol class="comment-list">
         <Comment v-for="comment in comments" :key="comment.id" :comment="comment" :parent="true">
-          <ol class="children">
+          <ol v-if="comment.children.length" class="children">
             <Comment
               v-for="childComment in comment.children"
               :key="childComment.id"
