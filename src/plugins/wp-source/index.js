@@ -124,9 +124,11 @@ class WordPressSource {
 
     for (const comment of data) {
       const fields = this.normalizeFields(comment)
+      // const avatars = mapKeys(comment.author_avatar_urls, (v, key) => `avatar${key}`)
       comments.addNode({
         ...fields,
-        id: comment.id
+        id: comment.id,
+        // avatars,
       })
     }
   }

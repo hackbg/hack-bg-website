@@ -36,12 +36,14 @@
       </transition>
     </b-row>
     <NewsletterForm />
+    <CommentSection :post="$page.post.id" />
   </Layout>
 </template>
 
 <page-query>
 query Post($path: String!) {
   post: wordPressPost(path: $path) {
+    id
     title
     date
     content
@@ -74,11 +76,13 @@ query Post($path: String!) {
 <script>
 import Post from "~/components/Post.vue";
 import NewsletterForm from "~/components/NewsletterForm.vue";
+import CommentSection from "~/components/CommentSection.vue";
 
 export default {
   components: {
     Post,
     NewsletterForm,
+    CommentSection,
   },
   metaInfo() {
     return {
