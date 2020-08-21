@@ -2136,29 +2136,6 @@ h2.comments-title {
   text-align: center;
 }
 
-.comment-respond {
-  margin-left: 2em;
-
-  > form > p.comment-form-comment > textarea {
-    border: 2px dashed #9013FE;
-    border-radius: 2px;
-  }
-}
-
-textarea#comment {
-  width: 100%;
-}
-
-.comment-respond input[type="text"], input[type="email"] {
-  border: 2px dashed #9013FE;
-  border-radius: 2px;
-}
-
-.comment-respond label {
-  display: block;
-  font-weight: normal;
-}
-
 .comment-metadata {
   font-size: 0.8em;
 }
@@ -2202,18 +2179,6 @@ textarea#comment {
 
 .comment-content {
   margin-bottom: 0.3em;
-}
-
-.comment-respond {
-  #submit {
-    background: #9013FE;
-    border-radius: 4px;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-  }
-
-  padding-top: 5px;
 }
 
 .comment-metadata time {

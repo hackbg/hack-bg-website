@@ -2,7 +2,7 @@
   <b-row class="mt-2">
     <b-col id="comments" class="comments-area">
       <h2 v-if="postComments.length" class="comments-title">{{postComments.length}} Comments</h2>
-      <ol class="comment-list">
+      <ol class="comment-list p-0">
         <Comment v-for="comment in comments" :key="comment.id" :comment="comment" :parent="true">
           <ol v-if="comment.children.length" class="children">
             <Comment
@@ -14,6 +14,7 @@
           </ol>
         </Comment>
       </ol>
+      <CommentForm />
     </b-col>
   </b-row>
 </template>
@@ -49,6 +50,7 @@
 
 <script>
 import Comment from "~/components/Comment.vue";
+import CommentForm from "~/components/CommentForm.vue";
 
 export default {
   props: {
@@ -57,7 +59,7 @@ export default {
       required: true,
     },
   },
-  components: { Comment },
+  components: { Comment, CommentForm },
   computed: {
     postComments() {
       return this.$static.comments.edges
