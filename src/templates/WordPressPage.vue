@@ -23,8 +23,6 @@ query($path: String) {
 </page-query>
 
 <script>
-import Post from '~/components/Post.vue'
-
 export default {
   metaInfo() {
     return {
