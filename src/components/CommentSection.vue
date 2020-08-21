@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="{node} in comments" :key="node.id">{{node}}</li>
-    </ul>
-    <!-- <ul>
-      <li v-for="comment in getComments(post)" :key=""></li>
-    </ul>-->
+  <div id="comments" class="comments-area">
+    <h2 v-if="comments.length" class="comments-title">{{comments.length}} Comments</h2>
+    <ol class="comment-list">
+      <Comment v-for="{node} in comments" :key="node.id" :comment="node" />
+    </ol>
   </div>
 </template>
 
@@ -39,6 +37,8 @@
 </static-query>
 
 <script>
+import Comment from "~/components/Comment.vue";
+
 export default {
   props: {
     post: {
@@ -46,6 +46,7 @@ export default {
       required: true,
     },
   },
+  components: { Comment },
   computed: {
     comments() {
       return this.$static.comments.edges.filter(
