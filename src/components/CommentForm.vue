@@ -97,7 +97,7 @@ export default {
         headers: {
           "Content-Type": "application/json",
         },
-        url: "https://hack.bg/wp-json/wp/v2/comments",
+        url: process.env.GRIDSOME_COMMENT_POST_URL,
         data,
       })
         .then((response) => {
