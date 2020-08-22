@@ -4,7 +4,7 @@ const camelCase = require('camelcase');
 const { mapKeys, isPlainObject, trimEnd } = require('lodash');
 
 const TYPE_AUTHOR = 'author'
-const TYPE_ATTACHEMENT = 'attachment'
+const TYPE_ATTACHMENT = 'attachment'
 const TYPE_COMMENT = 'comment'
 
 class WordPressSource {
