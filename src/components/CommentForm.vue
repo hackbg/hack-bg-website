@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: {
     post: {
@@ -59,15 +61,26 @@ export default {
     };
   },
   methods: {
-    submit() {
-      const data = JSON.stringify({
+    async submit() {
+      const data = {
         post: +this.post,
         parent: +this.parent,
         author_name: this.author,
         author_email: this.email,
         content: this.conten,
-      });
-      console.log(data);
+      };
+      axios({
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        url: "https://hack.bg/wp-json/wp/v2/comments",
+        data: JSON.stringify(data),
+      })
+        .then((response) => {
+          console.log(response.message);
+        })
+        .catch((error) => console.log(error.message));
     },
     cancelReply() {
       this.$emit("reply-to", "0");
