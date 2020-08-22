@@ -67,7 +67,7 @@ export default {
         parent: +this.parent,
         author_name: this.author,
         author_email: this.email,
-        content: this.conten,
+        content: this.content,
       };
       axios({
         method: "post",
