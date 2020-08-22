@@ -75,7 +75,7 @@ export default {
           "Content-Type": "application/json",
         },
         url: "https://hack.bg/wp-json/wp/v2/comments",
-        data: JSON.stringify(data),
+        body: JSON.stringify(data),
       })
         .then((response) => {
           console.log(response.message);
