@@ -41,8 +41,6 @@
 </template>
 
 <script>
-const WordPressSource = require("../plugins/wp-source/index");
-
 export default {
   props: {
     post: {
