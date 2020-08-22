@@ -3,18 +3,27 @@
     <b-col id="comments" class="comments-area">
       <h2 v-if="postComments.length" class="comments-title">{{postComments.length}} Comments</h2>
       <ol class="comment-list p-0">
-        <Comment v-for="comment in comments" :key="comment.id" :comment="comment" :parent="true">
+        <Comment
+          v-for="comment in comments"
+          :key="comment.id"
+          :comment="comment"
+          :parent="true"
+          :post="post"
+          @reply-to="replyTo"
+        >
           <ol v-if="comment.children.length" class="children">
             <Comment
               v-for="childComment in comment.children"
               :key="childComment.id"
               :comment="childComment"
               class="mb-4"
+              :post="post"
+              @reply-to="replyTo"
             />
           </ol>
         </Comment>
       </ol>
-      <CommentForm />
+      <CommentForm :post="post" :parent="parentCommentId" @reply-to="replyTo" />
     </b-col>
   </b-row>
 </template>
@@ -59,6 +68,9 @@ export default {
       required: true,
     },
   },
+  data() {
+    return { parentCommentId: "0" };
+  },
   components: { Comment, CommentForm },
   computed: {
     postComments() {
@@ -77,6 +89,11 @@ export default {
           ))
       );
       return comments;
+    },
+  },
+  methods: {
+    replyTo(id) {
+      this.parentCommentId = id;
     },
   },
 };

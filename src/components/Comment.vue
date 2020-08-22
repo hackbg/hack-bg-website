@@ -35,16 +35,7 @@
       <!-- .comment-content -->
 
       <div class="reply">
-        <a
-          rel="nofollow"
-          class="comment-reply-link"
-          :href="`#comment-${comment.id}`"
-          data-commentid="12"
-          data-postid="449"
-          data-belowelement="div-comment-12"
-          data-respondelement="respond"
-          aria-label="Reply to Nikita Fuchs"
-        >Reply</a>
+        <b-link class="comment-reply-link" @click="reply">Reply</b-link>
       </div>
     </article>
     <slot></slot>
@@ -60,8 +51,25 @@ export default {
       type: Object,
       required: true,
     },
+    post: {
+      type: String,
+      required: true,
+    },
   },
   mixins: [dateFormatMixin],
+  methods: {
+    reply() {
+      this.$router.push({ hash: "#commentForm" }).catch((error) => {
+        if (error.name != "NavigationDuplicated") {
+          throw error;
+        }
+      });
+      this.$emit(
+        "reply-to",
+        this.comment.parent ? this.comment.parent.toString() : this.comment.id
+      );
+    },
+  },
 };
 </script>
 

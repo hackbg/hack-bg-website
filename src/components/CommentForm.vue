@@ -1,17 +1,17 @@
 <template>
   <div id="respond" class="comment-respond">
-    <b-form id="commentform" @submit.prevent="submit">
+    <b-form id="commentForm" @submit.prevent="submit">
       <h3 id="reply-title">
         Leave a Reply
         <small>
-          <a href="#" :class="{cancel:!dirty}">Cancel reply</a>
+          <b-link @click="cancelReply" color="primary" :class="{'cancel':parent==='0'}">Cancel reply</b-link>
         </small>
       </h3>
       <p>Your email address will not be published. Required fields are marked *</p>
       <label for="comment">Comment</label>
       <b-form-textarea
         id="comment"
-        v-model="form.content"
+        v-model="content"
         cols="45"
         rows="8"
         maxlength="65525"
@@ -21,7 +21,7 @@
       <label for="author">Name *</label>
       <b-form-input
         id="author"
-        v-model="form.author"
+        v-model="author"
         maxlength="245"
         required
         class="comment-input mb-4"
@@ -30,7 +30,7 @@
       <b-form-input
         class="comment-input mb-4"
         id="email"
-        v-model="form.email"
+        v-model="email"
         maxlength="100"
         required
         type="email"
@@ -41,30 +41,38 @@
 </template>
 
 <script>
+const WordPressSource = require("../plugins/wp-source/index");
+
 export default {
+  props: {
+    post: {
+      type: String,
+      required: true,
+    },
+    parent: {
+      type: String,
+    },
+  },
   data() {
     return {
-      form: {
-        content: "",
-        author: "",
-        email: "",
-        postId: 0,
-        parrent: 0,
-      },
-      dirty: false,
+      content: "",
+      author: "",
+      email: "",
     };
-  },
-  watch: {
-    form: {
-      handler(newVal, oldVal) {
-        this.dirty = true;
-      },
-      deep: true,
-    },
   },
   methods: {
     submit() {
-      alert(this.form);
+      const data = JSON.stringify({
+        post: +this.post,
+        parent: +this.parent,
+        author_name: this.author,
+        author_email: this.email,
+        content: this.conten,
+      });
+      console.log(data);
+    },
+    cancelReply() {
+      this.$emit("reply-to", "0");
     },
   },
 };
