@@ -3,8 +3,9 @@ const axios = require('axios');
 const camelCase = require('camelcase');
 const { mapKeys, isPlainObject, trimEnd } = require('lodash');
 
-const TYPE_AUTHOR = 'author';
-const TYPE_ATTACHMENT = 'attachment';
+const TYPE_AUTHOR = 'author'
+const TYPE_ATTACHMENT = 'attachment'
+const TYPE_COMMENT = 'comment'
 
 class WordPressSource {
   static defaultOptions() {
@@ -52,12 +53,13 @@ class WordPressSource {
 
       console.log(`Loading data from ${baseUrl}`);
 
-      await this.getPostTypes(store);
-      await this.getUsers(store);
-      await this.getTaxonomies(store);
-      await this.getPosts(store);
-      this.createPages(api);
-    });
+      await this.getPostTypes(store)
+      await this.getUsers(store)
+      await this.getTaxonomies(store)
+      await this.getPosts(store)
+      await this.getComments(store)
+      this.createPages(api)
+    })
   }
 
   createPages(api) {
@@ -119,6 +121,24 @@ class WordPressSource {
         title: author.name,
         avatars,
       });
+    }
+  }
+
+  async getComments(store) {
+    const { data } = await this.fetch('wp/v2/comments')
+
+    const comments = store.addContentType({
+      typeName: this.createTypeName(TYPE_COMMENT)
+    })
+
+    for (const comment of data) {
+      const fields = this.normalizeFields(comment)
+      // const avatars = mapKeys(comment.author_avatar_urls, (v, key) => `avatar${key}`)
+      comments.addNode({
+        ...fields,
+        id: comment.id,
+        // avatars,
+      })
     }
   }
 
