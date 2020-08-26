@@ -53,12 +53,12 @@ class WordPressSource {
 
       console.log(`Loading data from ${baseUrl}`);
 
-      await this.getPostTypes(store)
-      await this.getUsers(store)
-      await this.getTaxonomies(store)
-      await this.getPosts(store)
-      await this.getComments(store)
-      this.createPages(api)
+      await this.getPostTypes(store);
+      await this.getUsers(store);
+      await this.getTaxonomies(store);
+      await this.getPosts(store);
+      await this.getComments(store);
+      this.createPages(api);
     })
   }
 
@@ -340,8 +340,8 @@ function ensureArrayData(url, data) {
     } catch (err) {
       throw new Error(
         `Failed to fetch ${url}\n` +
-          `Expected JSON response but received:\n` +
-          `${data.trim().substring(0, 150)}...\n`,
+        `Expected JSON response but received:\n` +
+        `${data.trim().substring(0, 150)}...\n`,
       );
     }
   }
