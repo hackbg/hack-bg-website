@@ -1,7 +1,7 @@
 <template>
   <b-row>
     <b-col sm="4" v-for="child in children" :key="child.id">
-      <a :href="child.link" class="child-card">
+      <a :href="child.link.replace(baseUrl, '')" class="child-card">
         <div class="card mb-3" style="max-width: 18rem;">
           <div class="card-body" style="text-align: left;">
             <h5 style="margin: 0 auto;">{{child.title}}</h5>
@@ -45,6 +45,11 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      baseUrl: process.env.GRIDSOME_BASE_URL,
+    };
   },
   computed: {
     children() {
