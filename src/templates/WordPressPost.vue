@@ -18,7 +18,26 @@
               </header>
               <div class="post-content text-break" v-html="$page.post.content" />
               <template v-if="$page.post.tags.length">
-                <h2 class="font-family-sans-serif h4">Tags:</h2>
+                <h2 class="font-family-sans-serif h4">
+                  <i class="fa fa-folder-open"></i>Categories:
+                </h2>
+                <ul class="list-inline">
+                  <li
+                    class="list-inline-item"
+                    v-for="category in $page.post.categories"
+                    :key="category.id"
+                  >
+                    <b-button
+                      class="mb-2"
+                      variant="primary"
+                      size="sm"
+                      :to="category.path"
+                    >{{ category.title }} ({{ category.count }})</b-button>
+                  </li>
+                </ul>
+                <h2 class="font-family-sans-serif h4">
+                  <i class="fa fa-tags"></i>Tags:
+                </h2>
                 <ul class="list-inline">
                   <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id">
                     <b-button
@@ -58,6 +77,7 @@ query Post($path: String!) {
       id
       title
       path
+      count
     }
     tags {
       id
