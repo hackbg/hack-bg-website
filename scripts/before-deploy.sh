@@ -6,4 +6,4 @@ if [[ $CNAME != "" ]]; then
 fi
 
 # add robots txt - prevent crawling
-echo $'User-agent: *\nDisallow: /' > dist/robots.txt
+echo $'User-agent: GoogleBot\nDisallow: /' > dist/robots.txt
