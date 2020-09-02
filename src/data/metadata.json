@@ -1,0 +1,32 @@
+{
+    "metadata": [
+        {
+            "name": "google-site-verification",
+            "content": "tMFprx4hdKjMcjVdQJ5-NfuZbUikunZmJJWUI_tvYYM"
+        },
+        {
+            "name": "waellet-tip-verification",
+            "content": "ak_2DDLbYBhHcuAzNg5Un853NRbUr8JVjZeMc6mTUpwmiVzA4ic6X"
+        },
+        {
+            "name": "robots",
+            "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+        },
+        {
+            "property": "article:publisher",
+            "content": "https://facebook.com/hackbg"
+        },
+        {
+            "name": "twitter:card",
+            "content": "summary_large_image"
+        },
+        {
+            "name": "twitter:creator",
+            "content": "@hack_bg"
+        },
+        {
+            "property": "og:locale",
+            "content": "en_US"
+        }
+    ]
+}

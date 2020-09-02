@@ -3,6 +3,7 @@ import BootstrapVue from 'bootstrap-vue'
 //global stylesheet
 import '~/assets/style/styles.scss'
 import DefaultLayout from '~/layouts/Default.vue'
+import { metadata } from "./data/metadata.json";
 
 export default function (Vue, { head }) {
   Vue.component('Layout', DefaultLayout)
@@ -21,4 +22,7 @@ export default function (Vue, { head }) {
     integrity: 'sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP',
     crossorigin: 'anonymous'
   })
+  for (const meta of metadata) {
+    head.meta.push(meta)
+  }
 }
