@@ -6,4 +6,4 @@ if [[ $CNAME != "" ]]; then
 fi
 
 # add robots txt - prevent crawling
-echo $'User-agent: *\nAllow: /\nDisallow: /*/seo-hide/$\nDisallow: /tag/*\nHost: https://01101000011000010110001101101011.com' > dist/robots.txt
+echo $'User-agent: *\nAllow: /\nDisallow: /*/seo-hide/$\nDisallow: /tag/*' > dist/robots.txt
