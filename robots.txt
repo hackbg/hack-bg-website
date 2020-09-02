@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 Disallow: /*/seo-hide/$
 Disallow: /tag/*
-Host: https://01101000011000010110001101101011.com
