@@ -3,10 +3,8 @@
     <b-row class="align-items-start">
       <transition name="fade" appear>
         <b-col tag="main" cols="12" lg="9" class="bg-white p-0 rounded shadow-lg">
-          <div class="overflow-hidden p-4 p-sm-5 ">
-            <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">
-              Latest Stories
-            </h1>
+          <div class="overflow-hidden p-4 p-sm-5">
+            <h1 class="text-center text-uppercase h5 font-family-sans-serif mb-5">Latest Stories</h1>
             <Post :post="node" v-for="{ node } in $page.allWordPressPost.edges" :key="node.id" />
             <Pagination :info="$page.allWordPressPost.pageInfo" />
           </div>
@@ -41,6 +39,10 @@ query Home($page: Int) {
           name
           path
         }
+        featuredMedia {
+          sourceUrl
+          altText
+        }
       }
     }
   }
@@ -48,9 +50,9 @@ query Home($page: Int) {
 </page-query>
 
 <script>
-import Post from '~/components/Post.vue'
-import Pagination from '~/components/Pagination.vue'
-import SiteSidebar from '~/components/SiteSidebar.vue'
+import Post from "~/components/Post.vue";
+import Pagination from "~/components/Pagination.vue";
+import SiteSidebar from "~/components/SiteSidebar.vue";
 
 export default {
   components: {
@@ -59,7 +61,7 @@ export default {
     SiteSidebar,
   },
   metaInfo: {
-    title: 'Latest Stories',
+    title: "Latest Stories",
   },
-}
+};
 </script>
