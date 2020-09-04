@@ -176,11 +176,15 @@ export default {
         name: "twitter:description",
         content: this.$page.post.excerpt.slice(3, -5),
       },
-      {
-        name: "twitter:image",
-        content: this.$page.post.featuredMedia.sourceUrl,
-      },
     ];
+    const twitterMetaTagsImage = this.$page.post.featuredMedia
+      ? [
+          {
+            name: "twitter:image",
+            content: this.$page.post.featuredMedia.sourceUrl,
+          },
+        ]
+      : [];
 
     return {
       title: this.$page.post.title,
@@ -191,6 +195,7 @@ export default {
         ...articleMetaTagsTagsList,
         ...articleMetaTagsSections,
         ...twitterMetaTags,
+        ...twitterMetaTagsImage,
       ],
     };
   },
