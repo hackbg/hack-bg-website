@@ -18,7 +18,26 @@
               </header>
               <div class="post-content text-break" v-html="$page.post.content" />
               <template v-if="$page.post.tags.length">
-                <h2 class="font-family-sans-serif h4">Tags:</h2>
+                <h2 class="font-family-sans-serif h4">
+                  <i class="fa fa-folder-open"></i>Categories:
+                </h2>
+                <ul class="list-inline">
+                  <li
+                    class="list-inline-item"
+                    v-for="category in $page.post.categories"
+                    :key="category.id"
+                  >
+                    <b-button
+                      class="mb-2"
+                      variant="primary"
+                      size="sm"
+                      :to="category.path"
+                    >{{ category.title }} ({{ category.count }})</b-button>
+                  </li>
+                </ul>
+                <h2 class="font-family-sans-serif h4">
+                  <i class="fa fa-tags"></i>Tags:
+                </h2>
                 <ul class="list-inline">
                   <li class="list-inline-item" v-for="tag in $page.post.tags" :key="tag.id">
                     <b-button
@@ -47,17 +66,23 @@ query Post($path: String!) {
     title
     date
     content
+    excerpt
+    link
+    modified
     featuredMedia {
       sourceUrl
       altText
+      mimeType
       mediaDetails {
         width
+        height
       }
     }
     categories {
       id
       title
       path
+      count
     }
     tags {
       id
@@ -85,8 +110,93 @@ export default {
     CommentSection,
   },
   metaInfo() {
+    const ogMetaTags = [
+      {
+        property: "og:type",
+        content: "article",
+      },
+      { property: "og:title", content: this.$page.post.title },
+      {
+        property: "og:description",
+        content: this.$page.post.excerpt.slice(3, -5),
+      },
+      {
+        property: "og:url",
+        content: this.$page.post.link,
+      },
+      { property: "og:updated_time", content: this.$page.post.modified },
+    ];
+    const ogMetaTagsFeaturedMedia = this.$page.post.featuredMedia
+      ? [
+          {
+            property: "og:image",
+            content: this.$page.post.featuredMedia.sourceUrl,
+          },
+          {
+            property: "og:image:secure_url",
+            content: this.$page.post.featuredMedia.sourceUrl,
+          },
+          {
+            property: "og:image:width",
+            content: this.$page.post.featuredMedia.mediaDetails.width,
+          },
+          {
+            property: "og:image:height",
+            content: this.$page.post.featuredMedia.mediaDetails.height,
+          },
+          {
+            property: "og:image:alt",
+            content: this.$page.post.featuredMedia.altText,
+          },
+          {
+            property: "og:image:type",
+            content: this.$page.post.featuredMedia.mimeType,
+          },
+        ]
+      : [];
+    const articleMetaTagsTagsList = this.$page.post.tags
+      ? this.$page.post.tags.map((t) => ({
+          property: "article:tag",
+          content: t.title,
+        }))
+      : [];
+    const articleMetaTagsSections = this.$page.post.categories
+      ? this.$page.post.categories.map((t) => ({
+          property: "article:section",
+          content: t.title,
+        }))
+      : [];
+    const articleMetaTags = [
+      { property: "article:published_time", content: this.$page.post.date },
+      { property: "article:modified_time", content: this.$page.post.modified },
+    ];
+    const twitterMetaTags = [
+      { name: "twitter:title", content: this.$page.post.title },
+      {
+        name: "twitter:description",
+        content: this.$page.post.excerpt.slice(3, -5),
+      },
+    ];
+    const twitterMetaTagsImage = this.$page.post.featuredMedia
+      ? [
+          {
+            name: "twitter:image",
+            content: this.$page.post.featuredMedia.sourceUrl,
+          },
+        ]
+      : [];
+
     return {
       title: this.$page.post.title,
+      meta: [
+        ...ogMetaTags,
+        ...ogMetaTagsFeaturedMedia,
+        ...articleMetaTags,
+        ...articleMetaTagsTagsList,
+        ...articleMetaTagsSections,
+        ...twitterMetaTags,
+        ...twitterMetaTagsImage,
+      ],
     };
   },
 };
