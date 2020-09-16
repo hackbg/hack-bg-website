@@ -11,7 +11,8 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: 'hack',
-  siteDescription: 'Blockchain & DLT Solutions',
+  siteDescription:
+    'Hack is a pioneer in Blockchain, providing services from Smart Contracts Development and Security Audit for ICO and STO Tokensales to fully-fledged Decentralized Applications.',
   plugins: [
     {
       use: '~/src/plugins/wp-source/',
