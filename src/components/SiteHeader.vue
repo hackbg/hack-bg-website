@@ -1,5 +1,5 @@
 <template>
-  <header class="py-2 sticky-top header">
+  <header class="py-2 header">
     <b-navbar class="p-1" toggleable="lg" type="light" id="nav-header">
       <b-navbar-brand>
         <b-navbar-brand class="font-family-headings" to="/">
@@ -46,38 +46,11 @@
   </header>
 </template>
 
-<script>
-export default {
-  mounted() {
-    window.addEventListener('scroll', () => this.handleScroll());
-  },
-  destroyed() {
-    window.removeEventListener('scroll', () => this.handleScroll());
-  },
-  methods: {
-    handleScroll(event) {
-      const header = document.getElementById('nav-header');
-      if (window.scrollY > 3) {
-        header.classList.add('navigation');
-      } else {
-        header.classList.remove('navigation');
-      }
-    },
-  },
-};
-</script>
-
 <style scoped>
 .contact {
   background-color: #9013fe;
   color: #ffffff;
   border-radius: 4px;
   padding: 0.5rem;
-}
-
-.navigation {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-  background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
 }
 </style>
