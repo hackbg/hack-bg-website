@@ -10,7 +10,7 @@
                                 <rect  stroke="#9013FE" fill="#F9E6FD" x="0.5" y="2.5" width="74" height="50"></rect>
                                 <polygon  fill="#F9E6FD" points="0 2 4.32752091 0 77 0 74.5857943 2"></polygon>
                                 <polygon  fill="#3726B0" transform="translate(75.500000, 27.000000) scale(-1, 1) rotate(90.000000) translate(-75.500000, -27.000000) " points="49 28 50.4682558 26 102 26 100.54361 28"></polygon>
-                                <g transform="translate(6.000000, 6.000000)" fill="#361CB3" font-family="MyriadPro-Regular, Myriad Pro" font-size="16" font-weight="normal">
+                                <g transform="translate(6.000000, 6.000000)" fill="#361CB3" font-family="Ubuntu mono" font-size="16" font-weight="normal">
                                     <text>
                                         <tspan x="-0.78" y="12">&lt;/&gt; </tspan>
                                     </text>
