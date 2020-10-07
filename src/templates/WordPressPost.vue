@@ -218,8 +218,6 @@ export default {
         ]
       : [];
 
-      debugger
-
     return {
       title: this.$page.post.metadata.rankMathTitle,
       meta: [
