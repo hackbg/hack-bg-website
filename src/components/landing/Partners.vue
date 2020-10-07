@@ -55,6 +55,13 @@
               alt="utu"
             />
           </b-col>
+          <b-col class="text-center mt-3">
+            <img
+              class="logo-partner-section"
+              src="@/assets/images/logos/avalanche.png"
+              alt="ava labs"
+            />
+          </b-col>
         </b-row>
       </div>
     </section>
