@@ -325,7 +325,8 @@ class WordPressSource {
       return this.normalizeFields(value);
     }
 
-    return value;
+    //ensures decodeURIComponent won't fail
+    return typeof value ==='string' ? value.replace(/%(?![0-9][0-9a-fA-F]+)/g, '%25'): value;
   }
 
   createTypeName(name = '') {
