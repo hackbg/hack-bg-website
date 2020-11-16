@@ -11,7 +11,7 @@ export default function (Vue, { head }) {
   head.link.push({
     rel: 'stylesheet',
     href: encodeURI(
-      'https://fonts.googleapis.com/css?family=Muli:400,400i,700|Roboto:700&display=swap',
+      'https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap',
     ),
   })
   head.link.push({
