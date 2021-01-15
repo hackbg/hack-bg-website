@@ -1,6 +1,5 @@
 <template>
   <section id="home">
-    <div class="empty-space"></div>
     <article class="home-bg">
       <div class="container">
         <div class="hack-home-content">

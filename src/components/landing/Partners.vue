@@ -1,5 +1,5 @@
 <template>
-  <article class="mt-5 mb-5">
+  <article>
     <section id="clients-and-partners">
       <div class="container">
         <div class="jumbotron jumbotron-fluid no-bg">
