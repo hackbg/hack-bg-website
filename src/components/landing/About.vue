@@ -1,7 +1,6 @@
 <template>
   <section id="about">
-    <div class="empty-space"></div>
-    <article class="mt-5 mb-5">
+    <article>
       <div class="container">
         <div class="jumbotron jumbotron-fluid no-bg">
           <div class="container">
