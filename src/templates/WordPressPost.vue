@@ -68,6 +68,7 @@
         </b-col>
       </transition>
     </b-row>
+    <AuthorSection :author="$page.post.author" />
     <NewsletterForm />
     <CommentSection :post="$page.post.id" />
   </Layout>
@@ -107,6 +108,10 @@ query Post($path: String!) {
     author {
       name
       path
+      description
+      avatars {
+        avatar96
+      }
     }
     metadata {
       postAudioId
@@ -124,14 +129,15 @@ query Post($path: String!) {
 import Post from '~/components/Post.vue';
 import NewsletterForm from '~/components/NewsletterForm.vue';
 import CommentSection from '~/components/CommentSection.vue';
+import AuthorSection from '~/components/AuthorSection.vue';
 
 export default {
   components: {
     Post,
     NewsletterForm,
     CommentSection,
+    AuthorSection
   },
-  mounted() {},
   metaInfo() {
     const metaDescription = this.$page.post.metadata
       ? [
